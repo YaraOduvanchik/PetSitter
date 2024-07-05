@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\PetSitter.API.props" />
+</Project>
