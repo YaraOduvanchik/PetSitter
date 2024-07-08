@@ -4,51 +4,42 @@ namespace PetSitter.Domain.Entities;
 
 public class Animal
 {
-    public Animal(
-        Kind kind, 
-        string breed, 
-        string name, 
-        int age, 
-        Gender gender, 
-        DateTimeOffset dateOfBirth, 
-        string description, 
-        float weight, 
-        string photo)
+    public const int MAX_NAME_LENGTH = 100;
+    public const int MAX_DESCRIPTION_LENGTH = 300;
+    
+    public Animal(Guid id, string name, string description, Gender gender, int age, Kind kind, string breed, float weight)
     {
+        Id = id;
+        Name = name;
+        Description = description;
+        Gender = gender;
+        Age = age;
         Kind = kind;
         Breed = breed;
-        Name = name;
-        Age = age;
-        Gender = gender;
-        DateOfBirth = dateOfBirth;
-        Description = description;
         Weight = weight;
-        Photo = photo;
     }
 
     public Guid Id { get; private set; }
 
+    public string Name { get; private set; }
+    
+    public string Description { get; private set; }
+    
+    public Gender Gender { get; private set; }
+    
+    public int Age { get; private set; }
+    
     public Kind Kind { get; private set; }
 
-    public string Breed { get; private set; } = string.Empty;
-
-    public string Name { get; private set; } = string.Empty;
-
-    public int Age { get; private set; }
-
-    public Gender Gender { get; private set; }
-
-    public DateTimeOffset DateOfBirth { get; private set; }
-
-    public string Description { get; private set; } = string.Empty;
-
-    //public List<Vaccination> Vaccinations { get; set; } = [];
-    
-    //public List<Disease> Diseases { get; set; } = [];
+    public string Breed { get; private set; }
 
     public float Weight { get; private set; }
 
-    public string Photo { get; private set; } = string.Empty;
+    public List<Photo> Photos { get; private set; } = [];
+
+    public List<Vaccination> Vaccinations { get; private set; } = [];
+
+    public List<Disease> Diseases { get; private set; } = [];
 }
 
 public enum Gender
