@@ -1,0 +1,17 @@
+F:\Programming\GitHub\PetSitterBackend\PetSitter\PetSitter.Infrastructure\bin\Debug\net8.0\PetSitter.Infrastructure.deps.json
+F:\Programming\GitHub\PetSitterBackend\PetSitter\PetSitter.Infrastructure\bin\Debug\net8.0\PetSitter.Infrastructure.runtimeconfig.json
+F:\Programming\GitHub\PetSitterBackend\PetSitter\PetSitter.Infrastructure\bin\Debug\net8.0\PetSitter.Infrastructure.dll
+F:\Programming\GitHub\PetSitterBackend\PetSitter\PetSitter.Infrastructure\bin\Debug\net8.0\PetSitter.Infrastructure.pdb
+F:\Programming\GitHub\PetSitterBackend\PetSitter\PetSitter.Infrastructure\bin\Debug\net8.0\PetSitter.Domain.dll
+F:\Programming\GitHub\PetSitterBackend\PetSitter\PetSitter.Infrastructure\bin\Debug\net8.0\PetSitter.Domain.pdb
+F:\Programming\GitHub\PetSitterBackend\PetSitter\PetSitter.Infrastructure\obj\Debug\net8.0\PetSitter.Infrastructure.csproj.AssemblyReference.cache
+F:\Programming\GitHub\PetSitterBackend\PetSitter\PetSitter.Infrastructure\obj\Debug\net8.0\PetSitter.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+F:\Programming\GitHub\PetSitterBackend\PetSitter\PetSitter.Infrastructure\obj\Debug\net8.0\PetSitter.Infrastructure.AssemblyInfoInputs.cache
+F:\Programming\GitHub\PetSitterBackend\PetSitter\PetSitter.Infrastructure\obj\Debug\net8.0\PetSitter.Infrastructure.AssemblyInfo.cs
+F:\Programming\GitHub\PetSitterBackend\PetSitter\PetSitter.Infrastructure\obj\Debug\net8.0\PetSitter.Infrastructure.csproj.CoreCompileInputs.cache
+F:\Programming\GitHub\PetSitterBackend\PetSitter\PetSitter.Infrastructure\obj\Debug\net8.0\PetSitte.365D21EE.Up2Date
+F:\Programming\GitHub\PetSitterBackend\PetSitter\PetSitter.Infrastructure\obj\Debug\net8.0\PetSitter.Infrastructure.dll
+F:\Programming\GitHub\PetSitterBackend\PetSitter\PetSitter.Infrastructure\obj\Debug\net8.0\refint\PetSitter.Infrastructure.dll
+F:\Programming\GitHub\PetSitterBackend\PetSitter\PetSitter.Infrastructure\obj\Debug\net8.0\PetSitter.Infrastructure.pdb
+F:\Programming\GitHub\PetSitterBackend\PetSitter\PetSitter.Infrastructure\obj\Debug\net8.0\PetSitter.Infrastructure.genruntimeconfig.cache
+F:\Programming\GitHub\PetSitterBackend\PetSitter\PetSitter.Infrastructure\obj\Debug\net8.0\ref\PetSitter.Infrastructure.dll

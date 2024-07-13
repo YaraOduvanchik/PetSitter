@@ -1,0 +1,11 @@
+F:\Programming\GitHub\PetSitterBackend\PetSitter\PetSitter.Domain\bin\Debug\net8.0\PetSitter.Domain.deps.json
+F:\Programming\GitHub\PetSitterBackend\PetSitter\PetSitter.Domain\bin\Debug\net8.0\PetSitter.Domain.dll
+F:\Programming\GitHub\PetSitterBackend\PetSitter\PetSitter.Domain\bin\Debug\net8.0\PetSitter.Domain.pdb
+F:\Programming\GitHub\PetSitterBackend\PetSitter\PetSitter.Domain\obj\Debug\net8.0\PetSitter.Domain.GeneratedMSBuildEditorConfig.editorconfig
+F:\Programming\GitHub\PetSitterBackend\PetSitter\PetSitter.Domain\obj\Debug\net8.0\PetSitter.Domain.AssemblyInfoInputs.cache
+F:\Programming\GitHub\PetSitterBackend\PetSitter\PetSitter.Domain\obj\Debug\net8.0\PetSitter.Domain.AssemblyInfo.cs
+F:\Programming\GitHub\PetSitterBackend\PetSitter\PetSitter.Domain\obj\Debug\net8.0\PetSitter.Domain.csproj.CoreCompileInputs.cache
+F:\Programming\GitHub\PetSitterBackend\PetSitter\PetSitter.Domain\obj\Debug\net8.0\PetSitter.Domain.dll
+F:\Programming\GitHub\PetSitterBackend\PetSitter\PetSitter.Domain\obj\Debug\net8.0\refint\PetSitter.Domain.dll
+F:\Programming\GitHub\PetSitterBackend\PetSitter\PetSitter.Domain\obj\Debug\net8.0\PetSitter.Domain.pdb
+F:\Programming\GitHub\PetSitterBackend\PetSitter\PetSitter.Domain\obj\Debug\net8.0\ref\PetSitter.Domain.dll
