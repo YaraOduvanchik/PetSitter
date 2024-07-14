@@ -6,18 +6,18 @@ public class Announcement
     {
         
     }
-    
+
     public Announcement(
-        User user,
-        Animal animal,
+        Guid id,
+        Guid animalId,
         string receipt,
         DateTimeOffset transferDate,
         DateTimeOffset completionDate,
         string description,
         decimal price)
     {
-        User = user;
-        Animal = animal;
+        Id = id;
+        AnimalId = animalId;
         Receipt = receipt;
         TransferDate = transferDate;
         CompletionDate = completionDate;
@@ -26,10 +26,8 @@ public class Announcement
     }
 
     public Guid Id { get; private set; }
-    
-    public User User { get; private set; }
 
-    public Animal Animal { get; private set; }
+    public Guid AnimalId { get; private set; }
 
     public string Receipt { get; private set; }
 

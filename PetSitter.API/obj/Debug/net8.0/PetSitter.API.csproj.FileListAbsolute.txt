@@ -108,3 +108,4 @@ F:\Programming\GitHub\PetSitterBackend\PetSitter\PetSitter.API\obj\Debug\net8.0\
 F:\Programming\GitHub\PetSitterBackend\PetSitter\PetSitter.API\obj\Debug\net8.0\PetSitter.API.pdb
 F:\Programming\GitHub\PetSitterBackend\PetSitter\PetSitter.API\obj\Debug\net8.0\PetSitter.API.genruntimeconfig.cache
 F:\Programming\GitHub\PetSitterBackend\PetSitter\PetSitter.API\obj\Debug\net8.0\ref\PetSitter.API.dll
+F:\Programming\GitHub\PetSitterBackend\PetSitter\PetSitter.API\obj\Debug\net8.0\PetSitter.API.sourcelink.json

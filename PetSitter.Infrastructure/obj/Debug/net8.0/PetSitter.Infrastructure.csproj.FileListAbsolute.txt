@@ -15,3 +15,4 @@ F:\Programming\GitHub\PetSitterBackend\PetSitter\PetSitter.Infrastructure\obj\De
 F:\Programming\GitHub\PetSitterBackend\PetSitter\PetSitter.Infrastructure\obj\Debug\net8.0\PetSitter.Infrastructure.pdb
 F:\Programming\GitHub\PetSitterBackend\PetSitter\PetSitter.Infrastructure\obj\Debug\net8.0\PetSitter.Infrastructure.genruntimeconfig.cache
 F:\Programming\GitHub\PetSitterBackend\PetSitter\PetSitter.Infrastructure\obj\Debug\net8.0\ref\PetSitter.Infrastructure.dll
+F:\Programming\GitHub\PetSitterBackend\PetSitter\PetSitter.Infrastructure\obj\Debug\net8.0\PetSitter.Infrastructure.sourcelink.json

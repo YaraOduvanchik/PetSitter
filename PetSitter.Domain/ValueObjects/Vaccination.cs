@@ -2,6 +2,11 @@
 
 public record Vaccination
 {
+    private Vaccination()
+    {
+        
+    }
+    
     public Vaccination(string name, DateTimeOffset timeLimit)
     {
         Name = name;

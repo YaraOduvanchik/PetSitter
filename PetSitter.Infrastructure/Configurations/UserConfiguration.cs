@@ -27,14 +27,13 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
         });
         
         builder.Property(s => s.DateOfBirth)
-            .HasDefaultValue(DateTimeOffset.Now)
             .IsRequired();
         
         builder.ComplexProperty(s => s.Address, b =>
         {
             b.Property(a => a.City)
                 .IsRequired()
-                .HasColumnName("address");
+                .HasColumnName("city");
             
             b.Property(a => a.Building)
                 .IsRequired()

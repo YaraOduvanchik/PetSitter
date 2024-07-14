@@ -10,6 +10,7 @@ public class User
     }
     
     public User(
+        Guid id,
         string name,
         string surname,
         string patronymic,
@@ -17,6 +18,7 @@ public class User
         DateTimeOffset dateOfBirth,
         Address address)
     {
+        Id = id;
         Name = name;
         Surname = surname;
         Patronymic = patronymic;
@@ -35,7 +37,7 @@ public class User
 
     public PhoneNumber PhoneNumber { get; private set; }
 
-    public DateTimeOffset DateOfBirth { get; private set; }
-
     public Address Address { get; private set; }
+    
+    public DateTimeOffset DateOfBirth { get; private set; }
 }

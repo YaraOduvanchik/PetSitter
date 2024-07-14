@@ -23,7 +23,7 @@ public class SitterConfiguration : IEntityTypeConfiguration<Sitter>
         {
             b.Property(a => a.City)
                 .IsRequired()
-                .HasColumnName("address");
+                .HasColumnName("city");
             
             b.Property(a => a.Building)
                 .IsRequired()
@@ -46,10 +46,6 @@ public class SitterConfiguration : IEntityTypeConfiguration<Sitter>
         });
         
         builder.Property(s => s.DateOfBirth)
-            .HasDefaultValue(DateTimeOffset.Now)
-            .IsRequired();
-        
-        builder.Property(s => s.Reason)
             .IsRequired();
         
         builder.Property(s => s.AnimalCount)

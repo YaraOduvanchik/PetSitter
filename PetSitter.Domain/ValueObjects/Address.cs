@@ -2,6 +2,11 @@ namespace PetSitter.Domain.ValueObjects;
 
 public record Address
 {
+    private Address()
+    {
+        
+    }
+    
     public Address(string city, string street, string building, string index)
     {
         City = city;

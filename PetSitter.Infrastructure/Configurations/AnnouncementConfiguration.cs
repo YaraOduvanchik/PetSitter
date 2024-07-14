@@ -14,18 +14,20 @@ public class AnnouncementConfiguration : IEntityTypeConfiguration<Announcement>
             .IsRequired();
 
         builder.Property(a => a.TransferDate)
-            .HasDefaultValue(DateTimeOffset.Now)
             .IsRequired();
-        
+
         builder.Property(a => a.CompletionDate)
-            .HasDefaultValue(DateTimeOffset.Now)
             .IsRequired();
 
         builder.Property(a => a.Description)
             .IsRequired();
 
-        builder.HasOne(a => a.User).WithMany();
-        
-        builder.HasOne(a => a.Animal).WithMany();
+        builder.Property(a => a.Price)
+            .IsRequired();
+
+        builder.HasOne<Animal>()
+            .WithMany()
+            .HasForeignKey(a => a.AnimalId)
+            .IsRequired();
     }
 }

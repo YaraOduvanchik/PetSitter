@@ -7,6 +7,11 @@ public record PhoneNumber
     public const string RUSSIAN_PHONE_REGEX = @"^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$";
 
     public string Number { get; }
+
+    private PhoneNumber()
+    {
+        
+    }
     
     private PhoneNumber(string number)
     {

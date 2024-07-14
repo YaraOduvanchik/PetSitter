@@ -12,8 +12,5 @@ public class PhotoConfiguration : IEntityTypeConfiguration<Photo>
 
         builder.Property(p => p.Path)
             .IsRequired();
-        
-        builder.Property(p => p.IsMain)
-            .IsRequired();
     }
 }

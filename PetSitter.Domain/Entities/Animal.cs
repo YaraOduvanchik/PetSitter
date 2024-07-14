@@ -11,37 +11,43 @@ public class Animal
     {
         
     }
-    
+
     public Animal(
+        Guid id,
+        Guid userId,
         string name,
         string description,
-        Gender gender,
+        string typeKind,
+        string gender,
         int age,
-        Kind kind,
         string breed,
         float weight)
     {
+        Id = id;
+        UserId = userId;
         Name = name;
         Description = description;
+        TypeKind = typeKind;
         Gender = gender;
         Age = age;
-        Kind = kind;
         Breed = breed;
         Weight = weight;
     }
 
     public Guid Id { get; private set; }
+    
+    public Guid UserId { get; private set; }
 
     public string Name { get; private set; }
     
     public string Description { get; private set; }
     
-    public Gender Gender { get; private set; }
+    public string TypeKind { get; private set; }
+    
+    public string Gender { get; private set; }
     
     public int Age { get; private set; }
     
-    public Kind Kind { get; private set; }
-
     public string Breed { get; private set; }
 
     public float Weight { get; private set; }
@@ -49,15 +55,9 @@ public class Animal
     public IReadOnlyCollection<Photo> Photos => _photos;
     private List<Photo> _photos = [];
 
-    public IReadOnlyCollection<Vaccination> Vaccinations => _vaccinations;
-    private List<Vaccination> _vaccinations = [];
-
-    public IReadOnlyCollection<Disease> Diseases => _diseases;
-    private List<Disease> _diseases = [];
-}
-
-public enum Gender
-{
-    Male,
-    Female,
+    // public IReadOnlyCollection<Vaccination> Vaccinations => _vaccinations;
+    // private List<Vaccination> _vaccinations = [];
+    //
+    // public IReadOnlyCollection<Disease> Diseases => _diseases;
+    // private List<Disease> _diseases = [];
 }

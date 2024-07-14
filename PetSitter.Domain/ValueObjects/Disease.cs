@@ -2,6 +2,11 @@
 
 public record Disease
 {
+    private Disease()
+    {
+        
+    }
+    
     public Disease(string name, string condition)
     {
         Name = name;

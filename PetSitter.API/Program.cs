@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using PetSitter.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,11 +14,11 @@ builder.Services.AddScoped<PetSitterDbContext>();
 
 var app = builder.Build();
 
-// using (var scope = app.Services.CreateScope())
-// {
-//     var dbContext = scope.ServiceProvider.GetRequiredService<PetSitterDbContext>();
-//     dbContext.Database.Migrate();
-// }
+using (var scope = app.Services.CreateScope())
+{
+    var dbContext = scope.ServiceProvider.GetRequiredService<PetSitterDbContext>();
+    dbContext.Database.Migrate();
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

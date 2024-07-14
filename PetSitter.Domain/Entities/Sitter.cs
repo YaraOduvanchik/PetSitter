@@ -10,23 +10,23 @@ public class Sitter
     }
 
     public Sitter(
+        Guid id,
         string name,
         string surname,
         string patronymic,
         Address address,
         PhoneNumber phoneNumber,
         DateTimeOffset dateOfBirth,
-        string reason,
         string animalCount,
         string preferences)
     {
+        Id = id;
         Name = name;
         Surname = surname;
         Patronymic = patronymic;
         Address = address;
         PhoneNumber = phoneNumber;
         DateOfBirth = dateOfBirth;
-        Reason = reason;
         AnimalCount = animalCount;
         Preferences = preferences;
     }
@@ -44,8 +44,6 @@ public class Sitter
     public PhoneNumber PhoneNumber {  get; private set; }
 
     public DateTimeOffset DateOfBirth { get; private set; }
-
-    public string Reason { get; private set; }
 
     public string AnimalCount { get; private set; }
 

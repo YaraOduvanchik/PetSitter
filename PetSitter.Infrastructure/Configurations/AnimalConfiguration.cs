@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using PetSitter.Domain.Entities;
-using PetSitter.Domain.ValueObjects;
 
 namespace PetSitter.Infrastructure.Configurations;
 
@@ -9,50 +8,42 @@ public class AnimalConfiguration : IEntityTypeConfiguration<Animal>
 {
     public void Configure(EntityTypeBuilder<Animal> builder)
     {
-        builder.HasKey(p => p.Id);
+        builder.HasKey(a => a.Id);
         
-        builder.Property(p => p.Name)
-            .IsRequired()
-            .HasMaxLength(Animal.MAX_NAME_LENGTH);
+        builder.HasOne<User>()
+            .WithMany()
+            .HasForeignKey(a => a.Id);
+
+        builder.Property(a => a.Name)
+            .IsRequired();
         
-        builder.Property(p => p.Description)
-            .IsRequired()
-            .HasMaxLength(Animal.MAX_DESCRIPTION_LENGTH);
+        builder.Property(a => a.Description)
+            .IsRequired();
         
-        builder.Property(p => p.Gender)
+        builder.Property(a => a.TypeKind)
+            .IsRequired();
+        
+        builder.Property(a => a.Gender)
+            .IsRequired();
+        
+        builder.Property(a => a.Age)
+            .IsRequired();
+        
+        builder.Property(a => a.Breed)
+            .IsRequired();
+        
+        builder.Property(a => a.Weight)
             .IsRequired();
 
-        // builder.ComplexProperty(cp => cp.Gender, b =>
-        // {
-        //     b.Property(p => p == Gender.Female)
-        //         .IsRequired()
-        //         .HasColumnName("female");
-        //     
-        //     b.Property(p => p == Gender.Male)
-        //         .IsRequired()
-        //         .HasColumnName("male");
-        // });
+        builder.HasMany(a => a.Photos)
+            .WithOne()
+            .HasForeignKey("AnimalId");
         
-        builder.Property(p => p.Age)
-            .IsRequired();
-        
-        builder.ComplexProperty(cp => cp.Kind, b =>
-        {
-            b.Property(p => p.Type)
-                .IsRequired()
-                .HasColumnName("kind_type");
-        });
-        
-        builder.Property(p => p.Breed)
-            .IsRequired();
-        
-        builder.Property(p => p.Weight)
-            .IsRequired();
-
-        builder.HasMany(p => p.Photos).WithOne();
-
-        builder.HasMany(p => p.Vaccinations).WithOne();
-        
-        builder.HasMany(p => p.Diseases).WithOne();
+        // builder.HasMany(a => a.Vaccinations)
+        //     .WithOne()
+        //     .HasForeignKey("AnimalId");
+        // builder.HasMany(a => a.Diseases)
+        //     .WithOne()
+        //     .HasForeignKey("AnimalId");
     }
 }
