@@ -10,3 +10,4 @@ F:\Programming\GitHub\PetSitterBackend\PetSitter\PetSitter.Domain\obj\Debug\net8
 F:\Programming\GitHub\PetSitterBackend\PetSitter\PetSitter.Domain\obj\Debug\net8.0\PetSitter.Domain.pdb
 F:\Programming\GitHub\PetSitterBackend\PetSitter\PetSitter.Domain\obj\Debug\net8.0\ref\PetSitter.Domain.dll
 F:\Programming\GitHub\PetSitterBackend\PetSitter\PetSitter.Domain\obj\Debug\net8.0\PetSitter.Domain.sourcelink.json
+F:\Programming\GitHub\PetSitterBackend\PetSitter\PetSitter.Domain\obj\Debug\net8.0\PetSitter.Domain.csproj.AssemblyReference.cache

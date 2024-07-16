@@ -9,6 +9,11 @@ namespace PetSitter.Infrastructure
     {
         private readonly IConfiguration _configuration;
 
+        public PetSitterDbContext()
+        {
+            AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+        }
+        
         public PetSitterDbContext(IConfiguration configuration)
         {
             _configuration = configuration;

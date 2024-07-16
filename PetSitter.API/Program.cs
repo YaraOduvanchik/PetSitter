@@ -1,5 +1,8 @@
 using Microsoft.EntityFrameworkCore;
+using PetSitter.Application;
+using PetSitter.Application.Abstractions;
 using PetSitter.Infrastructure;
+using PetSitter.Infrastructure.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +12,9 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddScoped<AnimalService>();
+builder.Services.AddScoped<IAnimalsRepository, AnimalRepository>();
 
 builder.Services.AddScoped<PetSitterDbContext>();
 

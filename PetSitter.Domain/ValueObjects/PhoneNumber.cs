@@ -1,8 +1,10 @@
 ﻿using System.Text.RegularExpressions;
+using CSharpFunctionalExtensions;
+using PetSitter.Domain.Common;
 
 namespace PetSitter.Domain.ValueObjects;
 
-public record PhoneNumber
+public class PhoneNumber
 {
     public const string RUSSIAN_PHONE_REGEX = @"^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$";
 
@@ -18,15 +20,15 @@ public record PhoneNumber
         Number = number;
     }
 
-    public PhoneNumber Create(string input)
+    public static Result<PhoneNumber, Error> Create(string input)
     {
         input = input.Trim();
-        
+
         if (string.IsNullOrWhiteSpace(input))
-            throw new AggregateException();
+            return Errors.General.ValueIsRequired();
 
         if (Regex.IsMatch(input, RUSSIAN_PHONE_REGEX) == false)
-            throw new AggregateException();
+            return Errors.General.ValueIsRequired();
 
         return new PhoneNumber(input);
     }

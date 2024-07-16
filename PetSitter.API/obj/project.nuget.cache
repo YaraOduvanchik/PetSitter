@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "1s5xw3bf2d0=",
+  "dgSpecHash": "GMua/8axiavIqtWvCDNBjJsSp+OXM/a4xBkSNCBhoNzH8Q4RRvBmYy9AMi45hDFpw+zeUei3STQsr0zhDDxeLw==",
   "success": true,
   "projectFilePath": "F:\\Programming\\GitHub\\PetSitterBackend\\PetSitter\\PetSitter.API\\PetSitter.API.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\chera\\.nuget\\packages\\csharpfunctionalextensions\\2.42.5\\csharpfunctionalextensions.2.42.5.nupkg.sha512",
     "C:\\Users\\chera\\.nuget\\packages\\efcore.namingconventions\\8.0.3\\efcore.namingconventions.8.0.3.nupkg.sha512",
     "C:\\Users\\chera\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\chera\\.nuget\\packages\\microsoft.aspnetcore.openapi\\8.0.6\\microsoft.aspnetcore.openapi.8.0.6.nupkg.sha512",

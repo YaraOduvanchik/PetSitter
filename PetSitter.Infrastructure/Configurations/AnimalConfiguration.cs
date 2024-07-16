@@ -26,7 +26,7 @@ public class AnimalConfiguration : IEntityTypeConfiguration<Animal>
         builder.Property(a => a.Gender)
             .IsRequired();
         
-        builder.Property(a => a.Age)
+        builder.Property(a => a.Birthday)
             .IsRequired();
         
         builder.Property(a => a.Breed)

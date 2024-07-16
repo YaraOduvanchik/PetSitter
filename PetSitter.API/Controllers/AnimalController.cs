@@ -1,6 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using PetSitter.API.Contracts;
+﻿using Contracts;
+using Microsoft.AspNetCore.Mvc;
+using PetSitter.Application;
+using PetSitter.Domain.Entities;
 using PetSitter.Infrastructure;
 
 namespace PetSitter.API.Controllers;
@@ -9,23 +10,30 @@ namespace PetSitter.API.Controllers;
 [Route("[controller]")]
 public class AnimalController : ControllerBase
 {
-    private readonly PetSitterDbContext _context;
+    private readonly AnimalService _service;
 
-    public AnimalController(PetSitterDbContext context)
+    public AnimalController(AnimalService service)
     {
-        _context = context;
+        _service = service;
     }
     
     [HttpPost]
-    public async Task<IActionResult> Create(CreateAnimalRequest request, CancellationToken ct)
+    public async Task<IActionResult> Create([FromBody] CreateAnimalRequest request, CancellationToken ct)
     {
-        return Ok();
+        var idResult = await _service.CreateAnimal(request, ct);
+
+        if (idResult.IsFailure)
+        {
+            return BadRequest(idResult.Error);
+        }
+        
+        return Ok(idResult.Value);
     }
     
     [HttpGet]
     public async Task<IActionResult> Get()
     {
-        var animals = await _context.Animals.ToListAsync();
+        // var animals = await _context.Animals.ToListAsync();
         
         return Ok();
     }

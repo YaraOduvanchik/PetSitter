@@ -1,4 +1,6 @@
-﻿using PetSitter.Domain.ValueObjects;
+﻿using CSharpFunctionalExtensions;
+using PetSitter.Domain.Common;
+using PetSitter.Domain.ValueObjects;
 
 namespace PetSitter.Domain.Entities;
 
@@ -12,24 +14,22 @@ public class Animal
         
     }
 
-    public Animal(
-        Guid id,
+    private Animal(
         Guid userId,
         string name,
         string description,
         string typeKind,
         string gender,
-        int age,
+        DateTimeOffset birthday,
         string breed,
         float weight)
     {
-        Id = id;
         UserId = userId;
         Name = name;
         Description = description;
         TypeKind = typeKind;
         Gender = gender;
-        Age = age;
+        Birthday = birthday;
         Breed = breed;
         Weight = weight;
     }
@@ -46,7 +46,7 @@ public class Animal
     
     public string Gender { get; private set; }
     
-    public int Age { get; private set; }
+    public DateTimeOffset Birthday { get; private set; }
     
     public string Breed { get; private set; }
 
@@ -60,4 +60,58 @@ public class Animal
     //
     // public IReadOnlyCollection<Disease> Diseases => _diseases;
     // private List<Disease> _diseases = [];
+
+    public static Result<Animal, Error> Create(
+        Guid userId,
+        string name,
+        string description,
+        string typeKind,
+        string gender,
+        string breed,
+        DateTimeOffset birthday,
+        float weight)
+    {
+        var nameValue = name.Trim();
+        var descriptionValue = description.Trim();
+        var typeKindValue = typeKind.Trim();
+        var genderValue = gender.Trim();
+        var breedValue = breed.Trim();
+
+        if (string.IsNullOrWhiteSpace(nameValue))
+            return Errors.General.ValueIsRequired();
+        
+        if (nameValue.Length > MAX_NAME_LENGTH)
+            return Errors.General.InvalidLength();
+
+        if (string.IsNullOrWhiteSpace(descriptionValue))
+            return Errors.General.ValueIsRequired();
+        
+        if (descriptionValue.Length > MAX_DESCRIPTION_LENGTH)
+            return Errors.General.InvalidLength();
+        
+        if (string.IsNullOrWhiteSpace(typeKindValue))
+            return Errors.General.ValueIsRequired();
+        
+        if (string.IsNullOrWhiteSpace(genderValue))
+            return Errors.General.ValueIsRequired();
+        
+        if (string.IsNullOrWhiteSpace(breedValue))
+            return Errors.General.ValueIsRequired();
+
+        if (birthday > DateTimeOffset.Now)
+        {
+            return Errors.General.ValueIsInvalid();
+        }
+
+        return new Animal(
+            userId,
+            nameValue,
+            descriptionValue,
+            typeKindValue,
+            gender,
+            birthday,
+            breedValue,
+            weight
+            );
+    }
 }
