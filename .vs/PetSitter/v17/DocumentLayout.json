@@ -1,0 +1,51 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\user\\Documents\\GitHub\\PetSitterBackend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D5ECDE7D-49F9-4E40-BC3D-1DFE06240F3F}|PetSitter.Application\\PetSitter.Application.csproj|c:\\users\\user\\documents\\github\\petsitterbackend\\petsitter.application\\abstractions\\ianimalsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D5ECDE7D-49F9-4E40-BC3D-1DFE06240F3F}|PetSitter.Application\\PetSitter.Application.csproj|solutionrelative:petsitter.application\\abstractions\\ianimalsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "IAnimalsRepository.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\PetSitterBackend\\PetSitter.Application\\Abstractions\\IAnimalsRepository.cs",
+              "RelativeDocumentMoniker": "PetSitter.Application\\Abstractions\\IAnimalsRepository.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\PetSitterBackend\\PetSitter.Application\\Abstractions\\IAnimalsRepository.cs",
+              "RelativeToolTip": "PetSitter.Application\\Abstractions\\IAnimalsRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-16T18:53:55.832Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 108,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -8,23 +8,23 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\chera\\.nuget\\packages\\": {},
-    "D:\\IDE\\VisualStudio2022\\Shared\\NuGetPackages": {}
+    "C:\\Users\\user\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Programming\\GitHub\\PetSitterBackend\\PetSitter\\Contracts\\Contracts.csproj",
+      "projectUniqueName": "C:\\Users\\user\\Documents\\GitHub\\PetSitterBackend\\Contracts\\Contracts.csproj",
       "projectName": "Contracts",
-      "projectPath": "F:\\Programming\\GitHub\\PetSitterBackend\\PetSitter\\Contracts\\Contracts.csproj",
-      "packagesPath": "C:\\Users\\chera\\.nuget\\packages\\",
-      "outputPath": "F:\\Programming\\GitHub\\PetSitterBackend\\PetSitter\\Contracts\\obj\\",
+      "projectPath": "C:\\Users\\user\\Documents\\GitHub\\PetSitterBackend\\Contracts\\Contracts.csproj",
+      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\user\\Documents\\GitHub\\PetSitterBackend\\Contracts\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "D:\\IDE\\VisualStudio2022\\Shared\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\chera\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -46,6 +46,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -67,7 +72,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
