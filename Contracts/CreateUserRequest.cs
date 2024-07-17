@@ -1,6 +1,4 @@
-﻿using PetSitter.Domain.ValueObjects;
-
-namespace Contracts;
+﻿namespace Contracts;
 
 public record CreateUserRequest(
     string Name,
@@ -8,7 +6,7 @@ public record CreateUserRequest(
     string Patronymic,
     string PhoneNumber,
     DateTimeOffset DateOfBirth,
-    string City, 
-    string Street, 
-    string Building, 
+    string City,
+    string Street,
+    string Building,
     string Index);

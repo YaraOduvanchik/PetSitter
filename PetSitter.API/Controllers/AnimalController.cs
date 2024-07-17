@@ -1,8 +1,6 @@
 ﻿using Contracts;
 using Microsoft.AspNetCore.Mvc;
 using PetSitter.Application;
-using PetSitter.Domain.Entities;
-using PetSitter.Infrastructure;
 
 namespace PetSitter.API.Controllers;
 
@@ -16,7 +14,7 @@ public class AnimalController : ControllerBase
     {
         _service = service;
     }
-    
+
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] CreateAnimalRequest request, CancellationToken ct)
     {
@@ -26,7 +24,7 @@ public class AnimalController : ControllerBase
         {
             return BadRequest(idResult.Error);
         }
-        
+
         return Ok(idResult.Value);
     }
 }

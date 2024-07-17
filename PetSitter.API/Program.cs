@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using PetSitter.Application;
 using PetSitter.Application.Abstractions;
+using PetSitter.Application.Validators;
 using PetSitter.Infrastructure;
 using PetSitter.Infrastructure.Repository;
 
@@ -15,6 +16,10 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<AnimalService>();
 builder.Services.AddScoped<IAnimalsRepository, AnimalRepository>();
+
+builder.Services.AddApplication();
+
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 builder.Services.AddScoped<PetSitterDbContext>();
 

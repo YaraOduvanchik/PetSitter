@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace PetSitter.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class Initial : Migration
+    public partial class InitialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -19,9 +19,9 @@ namespace PetSitter.Infrastructure.Migrations
                     name = table.Column<string>(type: "text", nullable: false),
                     surname = table.Column<string>(type: "text", nullable: false),
                     patronymic = table.Column<string>(type: "text", nullable: false),
-                    date_of_birth = table.Column<DateTimeOffset>(type: "timestamp with time zone", nullable: false),
                     animal_count = table.Column<string>(type: "text", nullable: false),
                     preferences = table.Column<string>(type: "text", nullable: false),
+                    date_of_birth = table.Column<DateTimeOffset>(type: "timestamp with time zone", nullable: false),
                     building = table.Column<string>(type: "text", nullable: false),
                     city = table.Column<string>(type: "text", nullable: false),
                     index = table.Column<string>(type: "text", nullable: false),
@@ -63,7 +63,7 @@ namespace PetSitter.Infrastructure.Migrations
                     description = table.Column<string>(type: "text", nullable: false),
                     type_kind = table.Column<string>(type: "text", nullable: false),
                     gender = table.Column<string>(type: "text", nullable: false),
-                    age = table.Column<int>(type: "integer", nullable: false),
+                    birthday = table.Column<DateTimeOffset>(type: "timestamp with time zone", nullable: false),
                     breed = table.Column<string>(type: "text", nullable: false),
                     weight = table.Column<float>(type: "real", nullable: false)
                 },
@@ -85,9 +85,9 @@ namespace PetSitter.Infrastructure.Migrations
                     id = table.Column<Guid>(type: "uuid", nullable: false),
                     animal_id = table.Column<Guid>(type: "uuid", nullable: false),
                     receipt = table.Column<string>(type: "text", nullable: false),
+                    description = table.Column<string>(type: "text", nullable: false),
                     transfer_date = table.Column<DateTimeOffset>(type: "timestamp with time zone", nullable: false),
                     completion_date = table.Column<DateTimeOffset>(type: "timestamp with time zone", nullable: false),
-                    description = table.Column<string>(type: "text", nullable: false),
                     price = table.Column<decimal>(type: "numeric", nullable: false)
                 },
                 constraints: table =>

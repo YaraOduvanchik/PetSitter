@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\user\\Documents\\GitHub\\PetSitterBackend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D5ECDE7D-49F9-4E40-BC3D-1DFE06240F3F}|PetSitter.Application\\PetSitter.Application.csproj|c:\\users\\user\\documents\\github\\petsitterbackend\\petsitter.application\\abstractions\\ianimalsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D5ECDE7D-49F9-4E40-BC3D-1DFE06240F3F}|PetSitter.Application\\PetSitter.Application.csproj|solutionrelative:petsitter.application\\abstractions\\ianimalsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D5ECDE7D-49F9-4E40-BC3D-1DFE06240F3F}|PetSitter.Application\\PetSitter.Application.csproj|c:\\users\\user\\documents\\github\\petsitterbackend\\petsitter.application\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D5ECDE7D-49F9-4E40-BC3D-1DFE06240F3F}|PetSitter.Application\\PetSitter.Application.csproj|solutionrelative:petsitter.application\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,14 +23,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "IAnimalsRepository.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\PetSitterBackend\\PetSitter.Application\\Abstractions\\IAnimalsRepository.cs",
-              "RelativeDocumentMoniker": "PetSitter.Application\\Abstractions\\IAnimalsRepository.cs",
-              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\PetSitterBackend\\PetSitter.Application\\Abstractions\\IAnimalsRepository.cs",
-              "RelativeToolTip": "PetSitter.Application\\Abstractions\\IAnimalsRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAABAAAA",
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\PetSitterBackend\\PetSitter.Application\\UserService.cs",
+              "RelativeDocumentMoniker": "PetSitter.Application\\UserService.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\PetSitterBackend\\PetSitter.Application\\UserService.cs",
+              "RelativeToolTip": "PetSitter.Application\\UserService.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAiwBkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-16T18:53:55.832Z",
+              "WhenOpened": "2024-07-17T07:46:56.54Z",
               "EditorCaption": ""
             }
           ]

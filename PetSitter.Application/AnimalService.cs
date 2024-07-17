@@ -18,13 +18,13 @@ public class AnimalService
     public async Task<Result<Guid, Error>> CreateAnimal(CreateAnimalRequest request, CancellationToken ct)
     {
         var animal = Animal.Create(
-            Guid.Empty, 
-            request.Name, 
-            request.Description, 
+            Guid.Empty,
+            request.Name,
+            request.Description,
             request.TypeKind,
             request.Gender,
             request.Breed,
-            request.Birthday, 
+            request.Birthday,
             request.Weight);
 
         var idResult = await _animalsRepository.Add(animal.Value, ct);

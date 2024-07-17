@@ -13,8 +13,8 @@ using PetSitter.Infrastructure;
 namespace PetSitter.Infrastructure.Migrations
 {
     [DbContext(typeof(PetSitterDbContext))]
-    [Migration("20240714055902_Initial")]
-    partial class Initial
+    [Migration("20240717063259_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -32,9 +32,9 @@ namespace PetSitter.Infrastructure.Migrations
                         .HasColumnType("uuid")
                         .HasColumnName("id");
 
-                    b.Property<int>("Age")
-                        .HasColumnType("integer")
-                        .HasColumnName("age");
+                    b.Property<DateTimeOffset>("Birthday")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("birthday");
 
                     b.Property<string>("Breed")
                         .IsRequired()

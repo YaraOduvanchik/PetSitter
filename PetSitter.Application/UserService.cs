@@ -19,26 +19,20 @@ public class UserService
     public async Task<Result<Guid, Error>> CreateUser(CreateUserRequest request, CancellationToken ct)
     {
         var address = Address.Create(
-            request.City, 
-            request.Street, 
-            request.Building, 
-            request.Index);
+            request.City,
+            request.Street,
+            request.Building,
+            request.Index).Value;
 
-        var phoneNumber = PhoneNumber.Create(request.PhoneNumber);
+        var phoneNumber = PhoneNumber.Create(request.PhoneNumber).Value;
 
-        if (address.IsFailure)
-            return Errors.General.ValueIsInvalid(nameof(address));
-       
-        if (phoneNumber.IsFailure)
-            return Errors.General.ValueIsInvalid(nameof(phoneNumber));
-        
         var user = User.Create(
             request.Name,
             request.Surname,
             request.Patronymic,
-            phoneNumber.Value,
+            phoneNumber,
             request.DateOfBirth,
-            address.Value);
+            address);
 
         var idResult = await _userRepository.Add(user.Value, ct);
 

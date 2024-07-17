@@ -29,9 +29,9 @@ namespace PetSitter.Infrastructure.Migrations
                         .HasColumnType("uuid")
                         .HasColumnName("id");
 
-                    b.Property<int>("Age")
-                        .HasColumnType("integer")
-                        .HasColumnName("age");
+                    b.Property<DateTimeOffset>("Birthday")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("birthday");
 
                     b.Property<string>("Breed")
                         .IsRequired()

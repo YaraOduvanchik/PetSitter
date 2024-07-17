@@ -9,11 +9,6 @@ public class PhoneNumber
     public const string RUSSIAN_PHONE_REGEX = @"^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$";
 
     public string Number { get; }
-
-    private PhoneNumber()
-    {
-        
-    }
     
     private PhoneNumber(string number)
     {
@@ -24,8 +19,8 @@ public class PhoneNumber
     {
         input = input.Trim();
 
-        if (string.IsNullOrWhiteSpace(input))
-            return Errors.General.ValueIsRequired();
+        if (input.Length < 1)
+            return Errors.General.InvalidLength("input");
 
         if (Regex.IsMatch(input, RUSSIAN_PHONE_REGEX) == false)
             return Errors.General.ValueIsRequired();

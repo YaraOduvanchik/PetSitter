@@ -1,94 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net8.0": {
-      "CSharpFunctionalExtensions/2.42.5": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/CSharpFunctionalExtensions.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/CSharpFunctionalExtensions.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
-      "PetSitter.Domain/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "dependencies": {
-          "CSharpFunctionalExtensions": "2.42.5"
-        },
-        "compile": {
-          "bin/placeholder/PetSitter.Domain.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/PetSitter.Domain.dll": {}
-        }
-      }
-    }
+    "net8.0": {}
   },
-  "libraries": {
-    "CSharpFunctionalExtensions/2.42.5": {
-      "sha512": "Do9Q7Nyfx2G4HRt96aB6yoP5Z9ic3jqBHLrf35tULzsWlFoBlkQZT62aXCiv7UmVmF56OUR+a3JoSSs140hfHQ==",
-      "type": "package",
-      "path": "csharpfunctionalextensions/2.42.5",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "csharpfunctionalextensions.2.42.5.nupkg.sha512",
-        "csharpfunctionalextensions.nuspec",
-        "lib/net40/CSharpFunctionalExtensions.dll",
-        "lib/net40/CSharpFunctionalExtensions.pdb",
-        "lib/net40/CSharpFunctionalExtensions.xml",
-        "lib/net45/CSharpFunctionalExtensions.dll",
-        "lib/net45/CSharpFunctionalExtensions.pdb",
-        "lib/net45/CSharpFunctionalExtensions.xml",
-        "lib/net461/CSharpFunctionalExtensions.dll",
-        "lib/net461/CSharpFunctionalExtensions.pdb",
-        "lib/net461/CSharpFunctionalExtensions.xml",
-        "lib/net5.0/CSharpFunctionalExtensions.dll",
-        "lib/net5.0/CSharpFunctionalExtensions.pdb",
-        "lib/net5.0/CSharpFunctionalExtensions.xml",
-        "lib/net6.0/CSharpFunctionalExtensions.dll",
-        "lib/net6.0/CSharpFunctionalExtensions.pdb",
-        "lib/net6.0/CSharpFunctionalExtensions.xml",
-        "lib/netstandard2.0/CSharpFunctionalExtensions.dll",
-        "lib/netstandard2.0/CSharpFunctionalExtensions.pdb",
-        "lib/netstandard2.0/CSharpFunctionalExtensions.xml"
-      ]
-    },
-    "PetSitter.Domain/1.0.0": {
-      "type": "project",
-      "path": "../PetSitter.Domain/PetSitter.Domain.csproj",
-      "msbuildProject": "../PetSitter.Domain/PetSitter.Domain.csproj"
-    }
-  },
+  "libraries": {},
   "projectFileDependencyGroups": {
-    "net8.0": [
-      "PetSitter.Domain >= 1.0.0"
-    ]
+    "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\chera\\.nuget\\packages\\": {},
-    "D:\\IDE\\VisualStudio2022\\Shared\\NuGetPackages": {}
+    "C:\\Users\\user\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Programming\\GitHub\\PetSitterBackend\\PetSitter\\Contracts\\Contracts.csproj",
+      "projectUniqueName": "C:\\Users\\user\\Documents\\GitHub\\PetSitterBackend\\Contracts\\Contracts.csproj",
       "projectName": "Contracts",
-      "projectPath": "F:\\Programming\\GitHub\\PetSitterBackend\\PetSitter\\Contracts\\Contracts.csproj",
-      "packagesPath": "C:\\Users\\chera\\.nuget\\packages\\",
-      "outputPath": "F:\\Programming\\GitHub\\PetSitterBackend\\PetSitter\\Contracts\\obj\\",
+      "projectPath": "C:\\Users\\user\\Documents\\GitHub\\PetSitterBackend\\Contracts\\Contracts.csproj",
+      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\user\\Documents\\GitHub\\PetSitterBackend\\Contracts\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "D:\\IDE\\VisualStudio2022\\Shared\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\chera\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -103,17 +39,18 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {
-            "F:\\Programming\\GitHub\\PetSitterBackend\\PetSitter\\PetSitter.Domain\\PetSitter.Domain.csproj": {
-              "projectPath": "F:\\Programming\\GitHub\\PetSitterBackend\\PetSitter\\PetSitter.Domain\\PetSitter.Domain.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -135,7 +72,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

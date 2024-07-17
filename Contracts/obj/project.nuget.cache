@@ -1,10 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LUfDUqEkg8TIlo8cBUrALYpAhGlW8Xvp12bdcVDBGjcDfcpC4oSyVad/eW0dAI8F/Rj9oZeuM9bbNBiJs1cu3g==",
+  "dgSpecHash": "1SJlEVdKP1Y=",
   "success": true,
-  "projectFilePath": "F:\\Programming\\GitHub\\PetSitterBackend\\PetSitter\\Contracts\\Contracts.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\chera\\.nuget\\packages\\csharpfunctionalextensions\\2.42.5\\csharpfunctionalextensions.2.42.5.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\Users\\user\\Documents\\GitHub\\PetSitterBackend\\Contracts\\Contracts.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }

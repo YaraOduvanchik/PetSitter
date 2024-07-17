@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "DGNMTTBQaTk8041HvHhqLn2v6NjoJ4cumKMjulbdnewqxn1ag7zSrBWsR3u0l8bKGgwZlF6w/33tJ1qJPN7NcQ==",
+  "dgSpecHash": "H67b4Hj09CU=",
   "success": true,
-  "projectFilePath": "F:\\Programming\\GitHub\\PetSitterBackend\\PetSitter\\PetSitter.Application\\PetSitter.Application.csproj",
+  "projectFilePath": "C:\\Users\\user\\Documents\\GitHub\\PetSitterBackend\\PetSitter.Application\\PetSitter.Application.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\chera\\.nuget\\packages\\csharpfunctionalextensions\\2.42.5\\csharpfunctionalextensions.2.42.5.nupkg.sha512"
+    "C:\\Users\\user\\.nuget\\packages\\csharpfunctionalextensions\\2.42.5\\csharpfunctionalextensions.2.42.5.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\fluentvalidation\\11.9.0\\fluentvalidation.11.9.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.9.0\\fluentvalidation.dependencyinjectionextensions.11.9.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\2.1.0\\microsoft.extensions.dependencyinjection.abstractions.2.1.0.nupkg.sha512"
   ],
   "logs": []
 }
