@@ -10,3 +10,7 @@ F:\Programming\GitHub\PetSitterBackend\PetSitter\Contracts\obj\Debug\net8.0\Cont
 F:\Programming\GitHub\PetSitterBackend\PetSitter\Contracts\obj\Debug\net8.0\refint\Contracts.dll
 F:\Programming\GitHub\PetSitterBackend\PetSitter\Contracts\obj\Debug\net8.0\Contracts.pdb
 F:\Programming\GitHub\PetSitterBackend\PetSitter\Contracts\obj\Debug\net8.0\ref\Contracts.dll
+F:\Programming\GitHub\PetSitterBackend\PetSitter\Contracts\bin\Debug\net8.0\PetSitter.Domain.dll
+F:\Programming\GitHub\PetSitterBackend\PetSitter\Contracts\bin\Debug\net8.0\PetSitter.Domain.pdb
+F:\Programming\GitHub\PetSitterBackend\PetSitter\Contracts\obj\Debug\net8.0\Contracts.csproj.AssemblyReference.cache
+F:\Programming\GitHub\PetSitterBackend\PetSitter\Contracts\obj\Debug\net8.0\Contracts.csproj.Up2Date

@@ -568,6 +568,9 @@
       },
       "System.Threading.Channels/6.0.0": {},
       "Contracts/1.0.0": {
+        "dependencies": {
+          "PetSitter.Domain": "1.0.0"
+        },
         "runtime": {
           "Contracts.dll": {}
         }

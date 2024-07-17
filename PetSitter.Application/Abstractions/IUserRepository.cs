@@ -4,7 +4,7 @@ using PetSitter.Domain.Entities;
 
 namespace PetSitter.Application.Abstractions;
 
-public interface IAnimalsRepository
+public interface IUserRepository
 {
-    Task<Result<Guid, Error>> Add(Animal animal, CancellationToken ct);
+    Task<Result<Guid, Error>> Add(User user, CancellationToken ct);
 }

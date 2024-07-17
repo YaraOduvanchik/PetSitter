@@ -29,12 +29,4 @@ public class AnimalController : ControllerBase
         
         return Ok(idResult.Value);
     }
-    
-    [HttpGet]
-    public async Task<IActionResult> Get()
-    {
-        // var animals = await _context.Animals.ToListAsync();
-        
-        return Ok();
-    }
 }

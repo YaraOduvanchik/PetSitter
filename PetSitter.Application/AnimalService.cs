@@ -8,11 +8,11 @@ namespace PetSitter.Application;
 
 public class AnimalService
 {
-    private readonly IAnimalsRepository _repository;
+    private readonly IAnimalsRepository _animalsRepository;
 
-    public AnimalService(IAnimalsRepository repository)
+    public AnimalService(IAnimalsRepository animalsRepository)
     {
-        _repository = repository;
+        _animalsRepository = animalsRepository;
     }
 
     public async Task<Result<Guid, Error>> CreateAnimal(CreateAnimalRequest request, CancellationToken ct)
@@ -27,12 +27,10 @@ public class AnimalService
             request.Birthday, 
             request.Weight);
 
-        var idResult = await _repository.Add(animal.Value, ct);
+        var idResult = await _animalsRepository.Add(animal.Value, ct);
 
         if (idResult.IsFailure)
-        {
             return idResult.Error;
-        }
 
         return idResult.Value;
     }
