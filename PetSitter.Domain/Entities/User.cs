@@ -1,4 +1,6 @@
-﻿using PetSitter.Domain.ValueObjects;
+﻿using CSharpFunctionalExtensions;
+using PetSitter.Domain.Common;
+using PetSitter.Domain.ValueObjects;
 
 namespace PetSitter.Domain.Entities;
 
@@ -9,8 +11,7 @@ public class User
         
     }
     
-    public User(
-        Guid id,
+    private User(
         string name,
         string surname,
         string patronymic,
@@ -18,7 +19,6 @@ public class User
         DateTimeOffset dateOfBirth,
         Address address)
     {
-        Id = id;
         Name = name;
         Surname = surname;
         Patronymic = patronymic;
@@ -37,4 +37,38 @@ public class User
     public Address Address { get; private set; }
     
     public DateTimeOffset DateOfBirth { get; private set; }
+    
+    public static Result<User, Error> Create(
+        string name,
+        string surname,
+        string patronymic,
+        PhoneNumber phoneNumber,
+        DateTimeOffset dateOfBirth,
+        Address address)
+    {
+        var nameValue = name.Trim();
+        var surnameValue = surname.Trim();
+        var patronymicValue = patronymic.Trim();
+
+        if (string.IsNullOrWhiteSpace(nameValue))
+            return Errors.General.ValueIsRequired(nameValue);
+        
+        if (string.IsNullOrWhiteSpace(surnameValue))
+            return Errors.General.ValueIsRequired(surnameValue);
+        
+        if (string.IsNullOrWhiteSpace(patronymicValue))
+            return Errors.General.ValueIsRequired(patronymicValue);
+
+        if (dateOfBirth > DateTimeOffset.Now)
+            return Errors.General.ValueIsInvalid($"User: {nameof(dateOfBirth)}");
+
+        return new User(
+            nameValue,
+            surnameValue,
+            patronymicValue,
+            phoneNumber,
+            dateOfBirth,
+            address
+        );
+    }
 }
