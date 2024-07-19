@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "iHTcgVdYd6I=",
+  "dgSpecHash": "r0P10zlNQhg=",
   "success": true,
   "projectFilePath": "C:\\Users\\user\\Documents\\GitHub\\PetSitterBackend\\PetSitter.Infrastructure\\PetSitter.Infrastructure.csproj",
   "expectedPackageFiles": [
@@ -34,6 +34,8 @@
     "C:\\Users\\user\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\npgsql\\8.0.3\\npgsql.8.0.3.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\8.0.4\\npgsql.entityframeworkcore.postgresql.8.0.4.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\sharpgrip.fluentvalidation.autovalidation.mvc\\1.4.0\\sharpgrip.fluentvalidation.autovalidation.mvc.1.4.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\sharpgrip.fluentvalidation.autovalidation.shared\\1.4.0\\sharpgrip.fluentvalidation.autovalidation.shared.1.4.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\system.codedom\\4.4.0\\system.codedom.4.4.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\system.composition\\6.0.0\\system.composition.6.0.0.nupkg.sha512",

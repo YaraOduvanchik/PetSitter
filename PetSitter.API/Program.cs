@@ -1,9 +1,11 @@
 using Microsoft.EntityFrameworkCore;
+using PetSitter.API.Middlewares;
 using PetSitter.Application;
 using PetSitter.Application.Abstractions;
 using PetSitter.Application.Validators;
 using PetSitter.Infrastructure;
 using PetSitter.Infrastructure.Repository;
+using SharpGrip.FluentValidation.AutoValidation.Mvc.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,11 +21,18 @@ builder.Services.AddScoped<IAnimalsRepository, AnimalRepository>();
 
 builder.Services.AddApplication();
 
+builder.Services.AddFluentValidationAutoValidation(configutation =>
+{
+    configutation.OverrideDefaultResultFactoryWith<CustomResultFactory>();
+});
+
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 builder.Services.AddScoped<PetSitterDbContext>();
 
 var app = builder.Build();
+
+app.UseMiddleware<ExceptionMiddleware>();
 
 using (var scope = app.Services.CreateScope())
 {

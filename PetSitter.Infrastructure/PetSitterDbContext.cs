@@ -19,10 +19,10 @@ namespace PetSitter.Infrastructure
             _configuration = configuration;
         }
         
-        public PetSitterDbContext(DbContextOptions<PetSitterDbContext> options) : base(options)
-        {
+        //public PetSitterDbContext(DbContextOptions<PetSitterDbContext> options) : base(options)
+        //{
             
-        }
+        //}
 
         public DbSet<Animal> Animals => Set<Animal>();
 
