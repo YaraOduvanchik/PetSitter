@@ -1,4 +1,5 @@
 ﻿using Contracts;
+using Contracts.Requests;
 using CSharpFunctionalExtensions;
 using PetSitter.Application.Abstractions;
 using PetSitter.Domain.Common;

@@ -1,12 +1,12 @@
 ﻿using Contracts;
+using Contracts.Requests;
 using Microsoft.AspNetCore.Mvc;
 using PetSitter.Application;
 
 namespace PetSitter.API.Controllers;
 
-[ApiController]
 [Route("[controller]")]
-public class AnimalController : ControllerBase
+public class AnimalController : ApplicationController
 {
     private readonly AnimalService _service;
 

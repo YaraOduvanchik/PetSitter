@@ -1,4 +1,6 @@
-﻿using CSharpFunctionalExtensions;
+﻿using Contracts.Dtos;
+using CSharpFunctionalExtensions;
+using Microsoft.EntityFrameworkCore;
 using PetSitter.Application.Abstractions;
 using PetSitter.Domain.Common;
 using PetSitter.Domain.Entities;
@@ -7,18 +9,18 @@ namespace PetSitter.Infrastructure.Repository;
 
 public class UserRepository : IUserRepository
 {
-    private readonly PetSitterDbContext _context;
+    private readonly PetSitterDbContext _dbContext;
 
-    public UserRepository(PetSitterDbContext context)
+    public UserRepository(PetSitterDbContext dbContext)
     {
-        _context = context;
+        _dbContext = dbContext;
     }
 
     public async Task<Result<Guid, Error>> Add(User user, CancellationToken ct)
     {
-        await _context.AddAsync(user, ct);
+        await _dbContext.AddAsync(user, ct);
 
-        var result = await _context.SaveChangesAsync(ct);
+        var result = await _dbContext.SaveChangesAsync(ct);
 
         if (result == 0)
         {
@@ -27,4 +29,19 @@ public class UserRepository : IUserRepository
 
         return user.Id;
     }
+    
+    public async Task<Result<User, Error>> GetUsersById(Guid id, CancellationToken ct)
+    {
+        var user = await _dbContext.Users.FindAsync(id);
+
+        if (user is null)
+            return Errors.General.NotFound();
+        
+        return user;
+    }
+
+    public async Task<IReadOnlyList<User>> Get(CancellationToken ct)
+    {
+        return await _dbContext.Users.AsNoTracking().ToListAsync(ct);
+    }   
 }

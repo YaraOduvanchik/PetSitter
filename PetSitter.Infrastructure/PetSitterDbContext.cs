@@ -25,6 +25,7 @@ namespace PetSitter.Infrastructure
         //}
 
         public DbSet<Animal> Animals => Set<Animal>();
+        public DbSet<User> Users => Set<User>();
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

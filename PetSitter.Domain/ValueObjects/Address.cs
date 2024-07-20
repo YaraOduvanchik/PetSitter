@@ -7,7 +7,6 @@ public record Address
 {
     private Address()
     {
-
     }
 
     private Address(string city, string street, string building, string index)
@@ -28,24 +27,24 @@ public record Address
 
     public static Result<Address, Error> Create(string city, string street, string building, string index)
     {
-        var cityValue = city.Trim();
-        var streetValue = street.Trim();
-        var buildingValue = building.Trim();
-        var indexValue = index.Trim();
+        city = city.Trim();
+        street = street.Trim();
+        building = building.Trim();
+        index = index.Trim();
 
-        if (cityValue.Length is < 1 or > 100)
+        if (city.Length is < 1 or > 100)
             return Errors.General.InvalidLength("city");
 
-        if (streetValue.Length is < 1 or > 100)
+        if (street.Length is < 1 or > 100)
             return Errors.General.InvalidLength("street");
 
-        if (buildingValue.Length is < 1 or > 100)
+        if (building.Length is < 1 or > 100)
             return Errors.General.InvalidLength("building");
 
-        if (indexValue.Length != 6)
+        if (index.Length != 6)
             return Errors.General.InvalidLength("index");
 
 
-        return new Address(cityValue, streetValue, buildingValue, indexValue);
+        return new Address(city, street, building, index);
     }
-}   
+}

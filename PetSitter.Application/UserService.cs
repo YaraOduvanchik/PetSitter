@@ -1,6 +1,9 @@
 ﻿using Contracts;
+using Contracts.Requests;
+using Contracts.Responses;
 using CSharpFunctionalExtensions;
 using PetSitter.Application.Abstractions;
+using PetSitter.Application.Mapping;
 using PetSitter.Domain.Common;
 using PetSitter.Domain.Entities;
 using PetSitter.Domain.ValueObjects;
@@ -40,5 +43,17 @@ public class UserService
             return idResult.Error;
 
         return idResult.Value;
+    }
+
+    public async Task<GetAllUsersResponse> GetUsersByPage(int page, int size, CancellationToken ct)
+    {
+        var users = await _userRepository.Get(ct);
+
+        var userDtos = users
+            .Skip((page-1) * size)
+            .Take(size)
+            .Select(u => u.ToDto());
+
+        return new(userDtos);
     }
 }

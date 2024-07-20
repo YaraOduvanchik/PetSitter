@@ -6,7 +6,6 @@ namespace PetSitter.API.Middlewares;
 public class ExceptionMiddleware
 {
     private readonly RequestDelegate _next;
-
     private readonly ILogger<ExceptionMiddleware> _logger;
 
     public ExceptionMiddleware(RequestDelegate next, ILogger<ExceptionMiddleware> logger)
@@ -28,11 +27,9 @@ public class ExceptionMiddleware
             var error = new Error("server.internal", ex.Message);
 
             context.Response.ContentType = "application/json";
-
             context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
-
+            
             await context.Response.WriteAsJsonAsync(error);
-
         }
     }
 }

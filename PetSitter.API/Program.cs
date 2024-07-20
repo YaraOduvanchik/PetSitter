@@ -1,3 +1,4 @@
+using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using PetSitter.API.Middlewares;
 using PetSitter.Application;
@@ -9,10 +10,7 @@ using SharpGrip.FluentValidation.AutoValidation.Mvc.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -21,10 +19,11 @@ builder.Services.AddScoped<IAnimalsRepository, AnimalRepository>();
 
 builder.Services.AddApplication();
 
-builder.Services.AddFluentValidationAutoValidation(configutation =>
+builder.Services.AddFluentValidationAutoValidation(configuration =>
 {
-    configutation.OverrideDefaultResultFactoryWith<CustomResultFactory>();
+    configuration.OverrideDefaultResultFactoryWith<CustomResultFactory>();
 });
+
 
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 
@@ -34,11 +33,11 @@ var app = builder.Build();
 
 app.UseMiddleware<ExceptionMiddleware>();
 
-using (var scope = app.Services.CreateScope())
-{
-    var dbContext = scope.ServiceProvider.GetRequiredService<PetSitterDbContext>();
-    dbContext.Database.Migrate();
-}
+// using (var scope = app.Services.CreateScope())
+// {
+//     var dbContext = scope.ServiceProvider.GetRequiredService<PetSitterDbContext>();
+//     dbContext.Database.Migrate();
+// }
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

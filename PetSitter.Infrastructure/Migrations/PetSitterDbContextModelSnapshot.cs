@@ -282,9 +282,9 @@ namespace PetSitter.Infrastructure.Migrations
                         });
 
                     b.HasKey("Id")
-                        .HasName("pk_user");
+                        .HasName("pk_users");
 
-                    b.ToTable("user", (string)null);
+                    b.ToTable("users", (string)null);
                 });
 
             modelBuilder.Entity("PetSitter.Domain.Entities.Animal", b =>
@@ -294,7 +294,7 @@ namespace PetSitter.Infrastructure.Migrations
                         .HasForeignKey("Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired()
-                        .HasConstraintName("fk_animals_user_id");
+                        .HasConstraintName("fk_animals_users_id");
                 });
 
             modelBuilder.Entity("PetSitter.Domain.Entities.Announcement", b =>

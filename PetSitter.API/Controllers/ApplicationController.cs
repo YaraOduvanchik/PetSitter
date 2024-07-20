@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using PetSitter.API.Heplers;
+using PetSitter.API.Validation;
+using PetSitter.Application.Validators;
 using PetSitter.Domain.Common;
 
 namespace PetSitter.API.Controllers;

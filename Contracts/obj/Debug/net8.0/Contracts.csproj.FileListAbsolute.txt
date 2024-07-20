@@ -26,3 +26,15 @@ C:\Users\user\Documents\GitHub\PetSitterBackend\Contracts\obj\Debug\net8.0\Contr
 C:\Users\user\Documents\GitHub\PetSitterBackend\Contracts\obj\Debug\net8.0\refint\Contracts.dll
 C:\Users\user\Documents\GitHub\PetSitterBackend\Contracts\obj\Debug\net8.0\Contracts.pdb
 C:\Users\user\Documents\GitHub\PetSitterBackend\Contracts\obj\Debug\net8.0\ref\Contracts.dll
+F:\Programming\GitHub\PetSitterBackend\Contracts\bin\Debug\net8.0\Contracts.deps.json
+F:\Programming\GitHub\PetSitterBackend\Contracts\bin\Debug\net8.0\Contracts.dll
+F:\Programming\GitHub\PetSitterBackend\Contracts\bin\Debug\net8.0\Contracts.pdb
+F:\Programming\GitHub\PetSitterBackend\Contracts\obj\Debug\net8.0\Contracts.GeneratedMSBuildEditorConfig.editorconfig
+F:\Programming\GitHub\PetSitterBackend\Contracts\obj\Debug\net8.0\Contracts.AssemblyInfoInputs.cache
+F:\Programming\GitHub\PetSitterBackend\Contracts\obj\Debug\net8.0\Contracts.AssemblyInfo.cs
+F:\Programming\GitHub\PetSitterBackend\Contracts\obj\Debug\net8.0\Contracts.csproj.CoreCompileInputs.cache
+F:\Programming\GitHub\PetSitterBackend\Contracts\obj\Debug\net8.0\Contracts.sourcelink.json
+F:\Programming\GitHub\PetSitterBackend\Contracts\obj\Debug\net8.0\Contracts.dll
+F:\Programming\GitHub\PetSitterBackend\Contracts\obj\Debug\net8.0\refint\Contracts.dll
+F:\Programming\GitHub\PetSitterBackend\Contracts\obj\Debug\net8.0\Contracts.pdb
+F:\Programming\GitHub\PetSitterBackend\Contracts\obj\Debug\net8.0\ref\Contracts.dll

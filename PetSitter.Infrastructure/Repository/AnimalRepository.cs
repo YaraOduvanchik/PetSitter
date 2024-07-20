@@ -21,9 +21,7 @@ public class AnimalRepository : IAnimalsRepository
         var result = await _context.SaveChangesAsync(ct);
 
         if (result == 0)
-        {
             return new Error("record.save", "Animal can not be save");
-        }
 
         return animal.Id;
     }
