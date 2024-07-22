@@ -7,7 +7,7 @@ public class Announcement
 {
     private Announcement()
     {
-        
+
     }
 
     private Announcement(
@@ -34,9 +34,9 @@ public class Announcement
 
     public DateTimeOffset TransferDate { get; private set; }
     public DateTimeOffset CompletionDate { get; private set; }
-    
+
     public decimal Price { get; private set; }
-    
+
     public static Result<Announcement, Error> Create(
         Guid animalId,
         string receipt,
@@ -50,13 +50,13 @@ public class Announcement
 
         if (string.IsNullOrWhiteSpace(receiptValue))
             return Errors.General.ValueIsRequired(receiptValue);
-        
+
         if (string.IsNullOrWhiteSpace(descriptionValue))
             return Errors.General.ValueIsRequired(descriptionValue);
 
         if (transferDate > DateTimeOffset.Now)
             return Errors.General.ValueIsInvalid(nameof(transferDate));
-        
+
         if (completionDate > DateTimeOffset.Now)
             return Errors.General.ValueIsInvalid(nameof(completionDate));
 

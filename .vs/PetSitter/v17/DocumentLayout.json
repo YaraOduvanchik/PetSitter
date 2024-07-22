@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\user\\Documents\\GitHub\\PetSitterBackend\\",
+  "WorkspaceRootPath": "F:\\Programming\\GitHub\\PetSitterBackend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C1D417B4-31EB-41B6-A41E-DD93A9729FEC}|PetSitter.API\\PetSitter.API.csproj|c:\\users\\user\\documents\\github\\petsitterbackend\\petsitter.api\\validation\\envelope.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C1D417B4-31EB-41B6-A41E-DD93A9729FEC}|PetSitter.API\\PetSitter.API.csproj|f:\\programming\\github\\petsitterbackend\\petsitter.api\\validation\\envelope.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C1D417B4-31EB-41B6-A41E-DD93A9729FEC}|PetSitter.API\\PetSitter.API.csproj|solutionrelative:petsitter.api\\validation\\envelope.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -18,30 +18,20 @@
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Envelope.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\PetSitterBackend\\PetSitter.API\\Validation\\Envelope.cs",
+              "DocumentMoniker": "F:\\Programming\\GitHub\\PetSitterBackend\\PetSitter.API\\Validation\\Envelope.cs",
               "RelativeDocumentMoniker": "PetSitter.API\\Validation\\Envelope.cs",
-              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\PetSitterBackend\\PetSitter.API\\Validation\\Envelope.cs",
+              "ToolTip": "F:\\Programming\\GitHub\\PetSitterBackend\\PetSitter.API\\Validation\\Envelope.cs",
               "RelativeToolTip": "PetSitter.API\\Validation\\Envelope.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAAcwCIAAAABAAAA",
+              "ViewState": "AQIAABMAAAAAAAAAAAAcwB8AAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-19T14:22:22.9Z",
               "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 108,
-          "SelectedChildIndex": -1,
-          "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             }
           ]
         }

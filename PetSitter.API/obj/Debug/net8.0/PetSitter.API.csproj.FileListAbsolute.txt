@@ -212,12 +212,10 @@ F:\Programming\GitHub\PetSitterBackend\PetSitter.API\bin\Debug\net8.0\ru\Microso
 F:\Programming\GitHub\PetSitterBackend\PetSitter.API\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 F:\Programming\GitHub\PetSitterBackend\PetSitter.API\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 F:\Programming\GitHub\PetSitterBackend\PetSitter.API\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-F:\Programming\GitHub\PetSitterBackend\PetSitter.API\bin\Debug\net8.0\Contracts.dll
 F:\Programming\GitHub\PetSitterBackend\PetSitter.API\bin\Debug\net8.0\PetSitter.Application.dll
 F:\Programming\GitHub\PetSitterBackend\PetSitter.API\bin\Debug\net8.0\PetSitter.Domain.dll
 F:\Programming\GitHub\PetSitterBackend\PetSitter.API\bin\Debug\net8.0\PetSitter.Infrastructure.dll
 F:\Programming\GitHub\PetSitterBackend\PetSitter.API\bin\Debug\net8.0\PetSitter.Infrastructure.pdb
-F:\Programming\GitHub\PetSitterBackend\PetSitter.API\bin\Debug\net8.0\Contracts.pdb
 F:\Programming\GitHub\PetSitterBackend\PetSitter.API\bin\Debug\net8.0\PetSitter.Application.pdb
 F:\Programming\GitHub\PetSitterBackend\PetSitter.API\bin\Debug\net8.0\PetSitter.Domain.pdb
 F:\Programming\GitHub\PetSitterBackend\PetSitter.API\obj\Debug\net8.0\PetSitter.API.csproj.AssemblyReference.cache

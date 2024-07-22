@@ -1,6 +1,5 @@
 ﻿using CSharpFunctionalExtensions;
 using PetSitter.Domain.Common;
-using PetSitter.Domain.ValueObjects;
 
 namespace PetSitter.Domain.Entities;
 
@@ -11,7 +10,7 @@ public class Animal
 
     private Animal()
     {
-        
+
     }
 
     private Animal(
@@ -35,31 +34,31 @@ public class Animal
     }
 
     public Guid Id { get; private set; }
-    
+
     public Guid UserId { get; private set; }
 
     public string Name { get; private set; }
-    
+
     public string Description { get; private set; }
-    
+
     public string TypeKind { get; private set; }
-    
+
     public string Gender { get; private set; }
-    
+
     public DateTimeOffset Birthday { get; private set; }
-    
+
     public string Breed { get; private set; }
 
     public float Weight { get; private set; }
 
     public IReadOnlyCollection<Photo> Photos => _photos;
-    private List<Photo> _photos = [];
+    private readonly List<Photo> _photos = [];
 
     // public IReadOnlyCollection<Vaccination> Vaccinations => _vaccinations;
-    // private List<Vaccination> _vaccinations = [];
+    // private readonly List<Vaccination> _vaccinations = [];
     //
     // public IReadOnlyCollection<Disease> Diseases => _diseases;
-    // private List<Disease> _diseases = [];
+    // private readonly List<Disease> _diseases = [];
 
     public static Result<Animal, Error> Create(
         Guid userId,
@@ -79,22 +78,22 @@ public class Animal
 
         if (string.IsNullOrWhiteSpace(nameValue))
             return Errors.General.ValueIsRequired();
-        
+
         if (nameValue.Length > MAX_NAME_LENGTH)
             return Errors.General.InvalidLength();
 
         if (string.IsNullOrWhiteSpace(descriptionValue))
             return Errors.General.ValueIsRequired();
-        
+
         if (descriptionValue.Length > MAX_DESCRIPTION_LENGTH)
             return Errors.General.InvalidLength();
-        
+
         if (string.IsNullOrWhiteSpace(typeKindValue))
             return Errors.General.ValueIsRequired();
-        
+
         if (string.IsNullOrWhiteSpace(genderValue))
             return Errors.General.ValueIsRequired();
-        
+
         if (string.IsNullOrWhiteSpace(breedValue))
             return Errors.General.ValueIsRequired();
 

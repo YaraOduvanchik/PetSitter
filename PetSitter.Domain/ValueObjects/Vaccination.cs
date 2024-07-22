@@ -7,9 +7,9 @@ public record Vaccination
 {
     private Vaccination()
     {
-        
+
     }
-    
+
     public Vaccination(string name, DateTimeOffset timeLimit)
     {
         Name = name;
@@ -19,14 +19,14 @@ public record Vaccination
     public string Name { get; private set; }
 
     public DateTimeOffset TimeLimit { get; private set; }
-    
+
     public static Result<Vaccination, Error> Create(string name, DateTimeOffset timeLimit)
     {
         var nameValue = name.Trim();
 
         if (string.IsNullOrWhiteSpace(nameValue))
             return Errors.General.ValueIsInvalid(nameValue);
-        
+
         if (timeLimit > DateTimeOffset.Now)
             return Errors.General.ValueIsInvalid(nameof(timeLimit));
 

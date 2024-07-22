@@ -8,9 +8,9 @@ public class User
 {
     private User()
     {
-        
+
     }
-    
+
     private User(
         string name,
         string surname,
@@ -26,18 +26,18 @@ public class User
         DateOfBirth = dateOfBirth;
         Address = address;
     }
-    
+
     public Guid Id { get; private set; }
-    
+
     public string Name { get; private set; }
     public string Surname { get; private set; }
     public string Patronymic { get; private set; }
-    
+
     public DateTimeOffset DateOfBirth { get; private set; }
 
     public PhoneNumber PhoneNumber { get; private set; }
     public Address Address { get; private set; }
-    
+
     public static Result<User, Error> Create(
         string name,
         string surname,
@@ -52,10 +52,10 @@ public class User
 
         if (string.IsNullOrWhiteSpace(nameValue))
             return Errors.General.ValueIsRequired(nameValue);
-        
+
         if (string.IsNullOrWhiteSpace(surnameValue))
             return Errors.General.ValueIsRequired(surnameValue);
-        
+
         if (string.IsNullOrWhiteSpace(patronymicValue))
             return Errors.General.ValueIsRequired(patronymicValue);
 

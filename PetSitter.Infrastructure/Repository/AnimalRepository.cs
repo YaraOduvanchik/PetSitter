@@ -2,14 +2,15 @@
 using PetSitter.Application.Abstractions;
 using PetSitter.Domain.Common;
 using PetSitter.Domain.Entities;
+using PetSitter.Infrastructure.DbContexts;
 
 namespace PetSitter.Infrastructure.Repository;
 
 public class AnimalRepository : IAnimalsRepository
 {
-    private readonly PetSitterDbContext _context;
+    private readonly PetSitterWriteDbContext _context;
 
-    public AnimalRepository(PetSitterDbContext context)
+    public AnimalRepository(PetSitterWriteDbContext context)
     {
         _context = context;
     }

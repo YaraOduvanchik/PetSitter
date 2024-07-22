@@ -7,9 +7,9 @@ public record Disease
 {
     private Disease()
     {
-        
+
     }
-    
+
     private Disease(string name, string condition)
     {
         Name = name;
@@ -19,7 +19,7 @@ public record Disease
     public string Name { get; private set; }
 
     public string Condition { get; private set; }
-    
+
     public static Result<Disease, Error> Create(string name, string condition)
     {
         var nameValue = name.Trim();
@@ -27,7 +27,7 @@ public record Disease
 
         if (string.IsNullOrWhiteSpace(nameValue))
             return Errors.General.ValueIsInvalid(nameValue);
-        
+
         if (string.IsNullOrWhiteSpace(conditionValue))
             return Errors.General.ValueIsInvalid(conditionValue);
 

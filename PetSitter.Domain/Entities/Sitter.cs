@@ -8,7 +8,7 @@ public class Sitter
 {
     private Sitter()
     {
-        
+
     }
 
     private Sitter(
@@ -31,8 +31,8 @@ public class Sitter
         Preferences = preferences;
     }
 
-    public Guid Id { get; private set;  }
-    
+    public Guid Id { get; private set; }
+
     public string Name { get; private set; }
     public string Surname { get; private set; }
     public string Patronymic { get; private set; }
@@ -40,10 +40,10 @@ public class Sitter
     public string Preferences { get; private set; }
 
     public Address Address { get; private set; }
-    public PhoneNumber PhoneNumber {  get; private set; }
-    
+    public PhoneNumber PhoneNumber { get; private set; }
+
     public DateTimeOffset DateOfBirth { get; private set; }
-    
+
     public static Result<Sitter, Error> Create(
         string name,
         string surname,
@@ -62,16 +62,16 @@ public class Sitter
 
         if (string.IsNullOrWhiteSpace(nameValue))
             return Errors.General.ValueIsRequired(nameValue);
-        
+
         if (string.IsNullOrWhiteSpace(surnameValue))
             return Errors.General.ValueIsRequired(surnameValue);
-        
+
         if (string.IsNullOrWhiteSpace(patronymicValue))
             return Errors.General.ValueIsRequired(patronymicValue);
-        
+
         if (string.IsNullOrWhiteSpace(animalCountValue))
             return Errors.General.ValueIsRequired(animalCountValue);
-        
+
         if (string.IsNullOrWhiteSpace(preferencesValue))
             return Errors.General.ValueIsRequired(preferencesValue);
 

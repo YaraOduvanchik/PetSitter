@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
-using PetSitter.Application.Validators;
 using PetSitter.Domain.Common;
 using SharpGrip.FluentValidation.AutoValidation.Mvc.Results;
 

@@ -1,17 +1,17 @@
-﻿using Contracts.Dtos;
-using CSharpFunctionalExtensions;
+﻿using CSharpFunctionalExtensions;
 using Microsoft.EntityFrameworkCore;
 using PetSitter.Application.Abstractions;
 using PetSitter.Domain.Common;
 using PetSitter.Domain.Entities;
+using PetSitter.Infrastructure.DbContexts;
 
 namespace PetSitter.Infrastructure.Repository;
 
 public class UserRepository : IUserRepository
 {
-    private readonly PetSitterDbContext _dbContext;
+    private readonly PetSitterWriteDbContext _dbContext;
 
-    public UserRepository(PetSitterDbContext dbContext)
+    public UserRepository(PetSitterWriteDbContext dbContext)
     {
         _dbContext = dbContext;
     }
@@ -29,19 +29,19 @@ public class UserRepository : IUserRepository
 
         return user.Id;
     }
-    
+
     public async Task<Result<User, Error>> GetUsersById(Guid id, CancellationToken ct)
     {
         var user = await _dbContext.Users.FindAsync(id);
 
         if (user is null)
             return Errors.General.NotFound();
-        
+
         return user;
     }
 
     public async Task<IReadOnlyList<User>> Get(CancellationToken ct)
     {
         return await _dbContext.Users.AsNoTracking().ToListAsync(ct);
-    }   
+    }
 }

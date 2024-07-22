@@ -1,30 +1,35 @@
-﻿using Contracts;
-using Contracts.Requests;
-using Microsoft.AspNetCore.Mvc;
-using PetSitter.Application;
+﻿using Microsoft.AspNetCore.Mvc;
+using PetSitter.Application.Animals.CreateAnimal;
+using PetSitter.Application.Animals.GetAnimals;
+using PetSitter.Infrastructure.Queries.Animals;
 
 namespace PetSitter.API.Controllers;
 
 [Route("[controller]")]
 public class AnimalController : ApplicationController
 {
-    private readonly AnimalService _service;
-
-    public AnimalController(AnimalService service)
-    {
-        _service = service;
-    }
-
     [HttpPost]
-    public async Task<IActionResult> Create([FromBody] CreateAnimalRequest request, CancellationToken ct)
+    public async Task<IActionResult> Create(
+        [FromServices] CreateAnimalService service,
+        [FromBody] CreateAnimalRequest request,
+        CancellationToken ct)
     {
-        var idResult = await _service.CreateAnimal(request, ct);
+        var idResult = await service.Handle(request, ct);
 
         if (idResult.IsFailure)
-        {
             return BadRequest(idResult.Error);
-        }
 
         return Ok(idResult.Value);
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> Get(
+        [FromServices] GetAnimalsQuery query,
+        [FromQuery] GetAnimalsRequest request,
+        CancellationToken ct)
+    {
+        var response = await query.Handle(request, ct);
+
+        return Ok(response);
     }
 }

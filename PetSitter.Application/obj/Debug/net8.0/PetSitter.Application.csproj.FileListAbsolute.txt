@@ -37,9 +37,7 @@ C:\Users\user\Documents\GitHub\PetSitterBackend\PetSitter.Application\obj\Debug\
 F:\Programming\GitHub\PetSitterBackend\PetSitter.Application\bin\Debug\net8.0\PetSitter.Application.deps.json
 F:\Programming\GitHub\PetSitterBackend\PetSitter.Application\bin\Debug\net8.0\PetSitter.Application.dll
 F:\Programming\GitHub\PetSitterBackend\PetSitter.Application\bin\Debug\net8.0\PetSitter.Application.pdb
-F:\Programming\GitHub\PetSitterBackend\PetSitter.Application\bin\Debug\net8.0\Contracts.dll
 F:\Programming\GitHub\PetSitterBackend\PetSitter.Application\bin\Debug\net8.0\PetSitter.Domain.dll
-F:\Programming\GitHub\PetSitterBackend\PetSitter.Application\bin\Debug\net8.0\Contracts.pdb
 F:\Programming\GitHub\PetSitterBackend\PetSitter.Application\bin\Debug\net8.0\PetSitter.Domain.pdb
 F:\Programming\GitHub\PetSitterBackend\PetSitter.Application\obj\Debug\net8.0\PetSitter.Application.csproj.AssemblyReference.cache
 F:\Programming\GitHub\PetSitterBackend\PetSitter.Application\obj\Debug\net8.0\PetSitter.Application.GeneratedMSBuildEditorConfig.editorconfig
