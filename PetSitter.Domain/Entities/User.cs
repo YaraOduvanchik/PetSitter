@@ -8,7 +8,6 @@ public class User
 {
     private User()
     {
-
     }
 
     private User(
@@ -27,7 +26,7 @@ public class User
         Address = address;
     }
 
-    public Guid Id { get; private set; }
+    public Guid Id { get; }
 
     public string Name { get; private set; }
     public string Surname { get; private set; }

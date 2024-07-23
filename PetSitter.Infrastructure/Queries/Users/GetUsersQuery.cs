@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using PetSitter.Application.Users.GetUsers;
+using PetSitter.Application.Features.Users.GetUsers;
 using PetSitter.Infrastructure.DbContexts;
 
 namespace PetSitter.Infrastructure.Queries.Users;
@@ -24,9 +24,9 @@ public class GetUsersQuery
         var totalCount = await usersQuery.CountAsync(ct);
 
         var users = await usersQuery.Skip((request.Page - 1) * request.Size)
-        .Take(request.Size)
-        .ToListAsync(ct);
+            .Take(request.Size)
+            .ToListAsync(ct);
 
-        return new(users, totalCount);
+        return new GetUsersResponse(users, totalCount);
     }
 }

@@ -118,16 +118,33 @@ namespace PetSitter.Infrastructure.Migrations
                     b.ToTable("announcements", (string)null);
                 });
 
-            modelBuilder.Entity("PetSitter.Domain.Entities.Photo", b =>
+            modelBuilder.Entity("PetSitter.Domain.Entities.Disease", b =>
                 {
                     b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("uuid")
                         .HasColumnName("id");
 
-                    b.Property<Guid?>("AnimalId")
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("name");
+
+                    b.Property<string>("Symptom")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("symptom");
+
+                    b.HasKey("Id")
+                        .HasName("pk_diseases");
+
+                    b.ToTable("diseases", (string)null);
+                });
+
+            modelBuilder.Entity("PetSitter.Domain.Entities.Photo", b =>
+                {
+                    b.Property<Guid>("Id")
                         .HasColumnType("uuid")
-                        .HasColumnName("animal_id");
+                        .HasColumnName("id");
 
                     b.Property<bool>("IsMain")
                         .HasColumnType("boolean")
@@ -141,9 +158,6 @@ namespace PetSitter.Infrastructure.Migrations
                     b.HasKey("Id")
                         .HasName("pk_photos");
 
-                    b.HasIndex("AnimalId")
-                        .HasDatabaseName("ix_photos_animal_id");
-
                     b.ToTable("photos", (string)null);
                 });
 
@@ -154,9 +168,8 @@ namespace PetSitter.Infrastructure.Migrations
                         .HasColumnType("uuid")
                         .HasColumnName("id");
 
-                    b.Property<string>("AnimalCount")
-                        .IsRequired()
-                        .HasColumnType("text")
+                    b.Property<int>("AnimalCount")
+                        .HasColumnType("integer")
                         .HasColumnName("animal_count");
 
                     b.Property<DateTimeOffset>("DateOfBirth")
@@ -291,6 +304,31 @@ namespace PetSitter.Infrastructure.Migrations
                     b.ToTable("users", (string)null);
                 });
 
+            modelBuilder.Entity("PetSitter.Domain.Entities.Vaccination", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uuid")
+                        .HasColumnName("id");
+
+                    b.Property<int>("DurationDay")
+                        .HasColumnType("integer")
+                        .HasColumnName("duration_day");
+
+                    b.Property<bool>("IsTimeLimit")
+                        .HasColumnType("boolean")
+                        .HasColumnName("is_time_limit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("name");
+
+                    b.HasKey("Id")
+                        .HasName("pk_vaccinations");
+
+                    b.ToTable("vaccinations", (string)null);
+                });
+
             modelBuilder.Entity("PetSitter.Domain.Entities.Animal", b =>
                 {
                     b.HasOne("PetSitter.Domain.Entities.User", null)
@@ -311,17 +349,43 @@ namespace PetSitter.Infrastructure.Migrations
                         .HasConstraintName("fk_announcements_animals_animal_id");
                 });
 
+            modelBuilder.Entity("PetSitter.Domain.Entities.Disease", b =>
+                {
+                    b.HasOne("PetSitter.Domain.Entities.Animal", null)
+                        .WithMany("Diseases")
+                        .HasForeignKey("Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("fk_diseases_animals_id");
+                });
+
             modelBuilder.Entity("PetSitter.Domain.Entities.Photo", b =>
                 {
                     b.HasOne("PetSitter.Domain.Entities.Animal", null)
                         .WithMany("Photos")
-                        .HasForeignKey("AnimalId")
-                        .HasConstraintName("fk_photos_animals_animal_id");
+                        .HasForeignKey("Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("fk_photos_animals_id");
+                });
+
+            modelBuilder.Entity("PetSitter.Domain.Entities.Vaccination", b =>
+                {
+                    b.HasOne("PetSitter.Domain.Entities.Animal", null)
+                        .WithMany("Vaccinations")
+                        .HasForeignKey("Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("fk_vaccinations_animals_id");
                 });
 
             modelBuilder.Entity("PetSitter.Domain.Entities.Animal", b =>
                 {
+                    b.Navigation("Diseases");
+
                     b.Navigation("Photos");
+
+                    b.Navigation("Vaccinations");
                 });
 #pragma warning restore 612, 618
         }

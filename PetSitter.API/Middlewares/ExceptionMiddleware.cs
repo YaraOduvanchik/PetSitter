@@ -1,12 +1,12 @@
-﻿using PetSitter.Domain.Common;
-using System.Net;
+﻿using System.Net;
+using PetSitter.Domain.Common;
 
 namespace PetSitter.API.Middlewares;
 
 public class ExceptionMiddleware
 {
-    private readonly RequestDelegate _next;
     private readonly ILogger<ExceptionMiddleware> _logger;
+    private readonly RequestDelegate _next;
 
     public ExceptionMiddleware(RequestDelegate next, ILogger<ExceptionMiddleware> logger)
     {

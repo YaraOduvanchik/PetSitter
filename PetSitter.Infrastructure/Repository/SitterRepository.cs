@@ -1,6 +1,6 @@
 ﻿using CSharpFunctionalExtensions;
 using Microsoft.EntityFrameworkCore;
-using PetSitter.Application.Abstractions;
+using PetSitter.Application.Features.Sitters;
 using PetSitter.Domain.Common;
 using PetSitter.Domain.Entities;
 using PetSitter.Infrastructure.DbContexts;
@@ -23,9 +23,7 @@ public class SitterRepository : ISitterRepository
         var result = await _dbContext.SaveChangesAsync(ct);
 
         if (result == 0)
-        {
-            return new Error("record.save", "Sitter can not be save");
-        }
+            return Errors.General.CantSave("Sitter");
 
         return sitter.Id;
     }

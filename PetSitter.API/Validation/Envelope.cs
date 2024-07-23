@@ -4,11 +4,6 @@ namespace PetSitter.API.Validation;
 
 public class Envelope
 {
-    public object? Result { get; }
-    public string? ErrorCode { get; }
-    public string? ErrorMessage { get; }
-    public DateTime? TimeGenerated { get; }
-
     private Envelope(object? result, Error? error)
     {
         Result = result;
@@ -19,6 +14,11 @@ public class Envelope
 
         TimeGenerated = DateTime.Now;
     }
+
+    public object? Result { get; }
+    public string? ErrorCode { get; }
+    public string? ErrorMessage { get; }
+    public DateTime? TimeGenerated { get; }
 
     public static Envelope Ok(object? result = null)
     {

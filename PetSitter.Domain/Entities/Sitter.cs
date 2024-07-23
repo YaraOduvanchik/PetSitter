@@ -8,7 +8,6 @@ public class Sitter
 {
     private Sitter()
     {
-
     }
 
     private Sitter(
@@ -18,7 +17,7 @@ public class Sitter
         Address address,
         PhoneNumber phoneNumber,
         DateTimeOffset dateOfBirth,
-        string animalCount,
+        int animalCount,
         string preferences)
     {
         Name = name;
@@ -31,12 +30,12 @@ public class Sitter
         Preferences = preferences;
     }
 
-    public Guid Id { get; private set; }
+    public Guid Id { get; }
 
     public string Name { get; private set; }
     public string Surname { get; private set; }
     public string Patronymic { get; private set; }
-    public string AnimalCount { get; private set; }
+    public int AnimalCount { get; private set; }
     public string Preferences { get; private set; }
 
     public Address Address { get; private set; }
@@ -51,13 +50,12 @@ public class Sitter
         Address address,
         PhoneNumber phoneNumber,
         DateTimeOffset dateOfBirth,
-        string animalCount,
+        int animalCount,
         string preferences)
     {
         var nameValue = name.Trim();
         var surnameValue = surname.Trim();
         var patronymicValue = patronymic.Trim();
-        var animalCountValue = animalCount.Trim();
         var preferencesValue = preferences.Trim();
 
         if (string.IsNullOrWhiteSpace(nameValue))
@@ -69,8 +67,8 @@ public class Sitter
         if (string.IsNullOrWhiteSpace(patronymicValue))
             return Errors.General.ValueIsRequired(patronymicValue);
 
-        if (string.IsNullOrWhiteSpace(animalCountValue))
-            return Errors.General.ValueIsRequired(animalCountValue);
+        if (animalCount <= 0)
+            return Errors.General.ValueIsRequired(nameof(animalCount));
 
         if (string.IsNullOrWhiteSpace(preferencesValue))
             return Errors.General.ValueIsRequired(preferencesValue);
@@ -85,7 +83,7 @@ public class Sitter
             address,
             phoneNumber,
             dateOfBirth,
-            animalCountValue,
+            animalCount,
             preferences
         );
     }

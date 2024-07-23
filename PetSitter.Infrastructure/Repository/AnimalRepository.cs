@@ -1,5 +1,5 @@
 ﻿using CSharpFunctionalExtensions;
-using PetSitter.Application.Abstractions;
+using PetSitter.Application.Features.Animals;
 using PetSitter.Domain.Common;
 using PetSitter.Domain.Entities;
 using PetSitter.Infrastructure.DbContexts;
@@ -22,7 +22,7 @@ public class AnimalRepository : IAnimalsRepository
         var result = await _context.SaveChangesAsync(ct);
 
         if (result == 0)
-            return new Error("record.save", "Animal can not be save");
+            return Errors.General.CantSave("Animal");
 
         return animal.Id;
     }

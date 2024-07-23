@@ -7,7 +7,6 @@ public class Announcement
 {
     private Announcement()
     {
-
     }
 
     private Announcement(
@@ -26,7 +25,7 @@ public class Announcement
         Price = price;
     }
 
-    public Guid Id { get; private set; }
+    public Guid Id { get; }
     public Guid AnimalId { get; private set; }
 
     public string Receipt { get; private set; }

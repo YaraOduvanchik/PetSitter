@@ -7,7 +7,6 @@ public class Photo
 {
     private Photo()
     {
-
     }
 
     private Photo(string path, bool isMain)
@@ -16,7 +15,7 @@ public class Photo
         IsMain = isMain;
     }
 
-    public Guid Id { get; private set; }
+    public Guid Id { get; }
 
     public string Path { get; private set; }
 

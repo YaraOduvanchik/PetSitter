@@ -1,6 +1,6 @@
-﻿using CSharpFunctionalExtensions;
+﻿using System.Text.RegularExpressions;
+using CSharpFunctionalExtensions;
 using PetSitter.Domain.Common;
-using System.Text.RegularExpressions;
 
 namespace PetSitter.Domain.ValueObjects;
 
@@ -8,12 +8,12 @@ public class PhoneNumber
 {
     public const string RUSSIAN_PHONE_REGEX = @"^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$";
 
-    public string Number { get; }
-
     private PhoneNumber(string number)
     {
         Number = number;
     }
+
+    public string Number { get; }
 
     public static Result<PhoneNumber, Error> Create(string input)
     {

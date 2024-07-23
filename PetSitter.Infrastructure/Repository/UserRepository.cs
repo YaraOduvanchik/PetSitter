@@ -1,6 +1,6 @@
 ﻿using CSharpFunctionalExtensions;
 using Microsoft.EntityFrameworkCore;
-using PetSitter.Application.Abstractions;
+using PetSitter.Application.Features.Users;
 using PetSitter.Domain.Common;
 using PetSitter.Domain.Entities;
 using PetSitter.Infrastructure.DbContexts;
@@ -23,11 +23,14 @@ public class UserRepository : IUserRepository
         var result = await _dbContext.SaveChangesAsync(ct);
 
         if (result == 0)
-        {
-            return new Error("record.save", "User can not be save");
-        }
+            return Errors.General.CantSave("User");
 
         return user.Id;
+    }
+
+    public async Task<IReadOnlyList<User>> Get(CancellationToken ct)
+    {
+        return await _dbContext.Users.AsNoTracking().ToListAsync(ct);
     }
 
     public async Task<Result<User, Error>> GetUsersById(Guid id, CancellationToken ct)
@@ -38,10 +41,5 @@ public class UserRepository : IUserRepository
             return Errors.General.NotFound();
 
         return user;
-    }
-
-    public async Task<IReadOnlyList<User>> Get(CancellationToken ct)
-    {
-        return await _dbContext.Users.AsNoTracking().ToListAsync(ct);
     }
 }

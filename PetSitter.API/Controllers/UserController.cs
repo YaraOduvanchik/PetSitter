@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using PetSitter.Application;
-using PetSitter.Application.Users.CreateUser;
-using PetSitter.Application.Users.GetUsers;
-using PetSitter.Infrastructure.Queries;
+using PetSitter.Application.Features.Users.CreateUser;
+using PetSitter.Application.Features.Users.GetUsers;
 using PetSitter.Infrastructure.Queries.Users;
 
 namespace PetSitter.API.Controllers;

@@ -7,10 +7,9 @@ public class Animal
 {
     public const int MAX_NAME_LENGTH = 100;
     public const int MAX_DESCRIPTION_LENGTH = 300;
-
+    
     private Animal()
     {
-
     }
 
     private Animal(
@@ -21,7 +20,11 @@ public class Animal
         string gender,
         DateTimeOffset birthday,
         string breed,
-        float weight)
+        float weight,
+        IEnumerable<Photo> photos,
+        IEnumerable<Disease> diseases,
+        IEnumerable<Vaccination> vaccinations)
+
     {
         UserId = userId;
         Name = name;
@@ -31,9 +34,12 @@ public class Animal
         Birthday = birthday;
         Breed = breed;
         Weight = weight;
+        _photos = photos.ToList();
+        _diseases = diseases.ToList();
+        _vaccinations = vaccinations.ToList();
     }
 
-    public Guid Id { get; private set; }
+    public Guid Id { get; }
 
     public Guid UserId { get; private set; }
 
@@ -53,12 +59,28 @@ public class Animal
 
     public IReadOnlyCollection<Photo> Photos => _photos;
     private readonly List<Photo> _photos = [];
-
-    // public IReadOnlyCollection<Vaccination> Vaccinations => _vaccinations;
-    // private readonly List<Vaccination> _vaccinations = [];
-    //
-    // public IReadOnlyCollection<Disease> Diseases => _diseases;
-    // private readonly List<Disease> _diseases = [];
+    
+    public IReadOnlyCollection<Disease> Diseases => _diseases;
+    private readonly List<Disease> _diseases = [];
+    
+    public IReadOnlyCollection<Vaccination> Vaccinations => _vaccinations;
+    private readonly List<Vaccination> _vaccinations = [];
+   
+    
+    public void AddPhoto(Photo photo)
+    {
+        _photos.Add(photo);
+    }
+    
+    public void AddDisease(Disease disease)
+    {
+        _diseases.Add(disease);
+    }
+    
+    public void AddVaccination(Vaccination vaccination)
+    {
+        _vaccinations.Add(vaccination);
+    }
 
     public static Result<Animal, Error> Create(
         Guid userId,
@@ -68,7 +90,10 @@ public class Animal
         string gender,
         string breed,
         DateTimeOffset birthday,
-        float weight)
+        float weight,
+        IEnumerable<Photo> photos,
+        IEnumerable<Disease> diseases,
+        IEnumerable<Vaccination> vaccinations)
     {
         var nameValue = name.Trim();
         var descriptionValue = description.Trim();
@@ -97,10 +122,7 @@ public class Animal
         if (string.IsNullOrWhiteSpace(breedValue))
             return Errors.General.ValueIsRequired();
 
-        if (birthday > DateTimeOffset.Now)
-        {
-            return Errors.General.ValueIsInvalid();
-        }
+        if (birthday > DateTimeOffset.Now) return Errors.General.ValueIsInvalid();
 
         return new Animal(
             userId,
@@ -110,7 +132,9 @@ public class Animal
             gender,
             birthday,
             breedValue,
-            weight
-            );
+            weight,
+            photos,
+            diseases,
+            vaccinations);
     }
 }

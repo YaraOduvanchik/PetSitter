@@ -39,13 +39,14 @@ public class AnimalConfiguration : IEntityTypeConfiguration<Animal>
 
         builder.HasMany(a => a.Photos)
             .WithOne()
-            .HasForeignKey("AnimalId");
+            .HasForeignKey(ph => ph.Id);
 
-        // builder.HasMany(a => a.Vaccinations)
-        //     .WithOne()
-        //     .HasForeignKey("AnimalId");
-        // builder.HasMany(a => a.Diseases)
-        //     .WithOne()
-        //     .HasForeignKey("AnimalId");
+        builder.HasMany(a => a.Vaccinations)
+            .WithOne()
+            .HasForeignKey(v => v.Id);
+
+        builder.HasMany(a => a.Diseases)
+            .WithOne()
+            .HasForeignKey(d => d.Id);
     }
 }

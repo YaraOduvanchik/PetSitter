@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
-using PetSitter.Application.Dtos;
+using PetSitter.Application.DTOs;
 
 namespace PetSitter.Infrastructure.DbContexts;
 
@@ -16,6 +16,7 @@ public class PetSitterReadDbContext : DbContext
 
     public DbSet<UserDto> Users => Set<UserDto>();
     public DbSet<AnimalDto> Animals => Set<AnimalDto>();
+    public DbSet<SitterDto> Sitters => Set<SitterDto>();
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {

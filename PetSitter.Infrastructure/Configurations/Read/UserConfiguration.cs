@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using PetSitter.Application.Dtos;
+using PetSitter.Application.DTOs;
 
 namespace PetSitter.Infrastructure.Configurations.Read;
 
