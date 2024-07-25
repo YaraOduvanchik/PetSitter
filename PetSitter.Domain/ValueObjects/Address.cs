@@ -5,6 +5,8 @@ namespace PetSitter.Domain.ValueObjects;
 
 public record Address
 {
+    public const int INDEX_TITLE_LENGTH = 6;
+
     private Address()
     {
     }
@@ -28,20 +30,19 @@ public record Address
     public static Result<Address, Error> Create(string city, string street, string building, string index)
     {
         city = city.Trim();
-        street = street.Trim();
         building = building.Trim();
         index = index.Trim();
 
-        if (city.Length is < 1 or > 100)
+        if (city.Length is Constraints.MINIMUN_TITLE_LENGTH or > Constraints.SHORT_TITLE_LENGTH)
             return Errors.General.InvalidLength("city");
 
-        if (street.Length is < 1 or > 100)
+        if (street.Length is < Constraints.MINIMUN_TITLE_LENGTH or > Constraints.MEDIUM_TITLE_LENGTH)
             return Errors.General.InvalidLength("street");
 
-        if (building.Length is < 1 or > 100)
+        if (string.IsNullOrWhiteSpace(building) || building.Length > Constraints.SHORT_TITLE_LENGTH)
             return Errors.General.InvalidLength("building");
 
-        if (index.Length != 6)
+        if (index.Length != INDEX_TITLE_LENGTH)
             return Errors.General.InvalidLength("index");
 
 

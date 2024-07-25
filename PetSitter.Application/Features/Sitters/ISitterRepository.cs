@@ -7,5 +7,6 @@ namespace PetSitter.Application.Features.Sitters;
 public interface ISitterRepository
 {
     Task<Result<Guid, Error>> Add(Sitter sitter, CancellationToken ct);
+
     Task<IReadOnlyList<Sitter>> Get(CancellationToken ct);
 }

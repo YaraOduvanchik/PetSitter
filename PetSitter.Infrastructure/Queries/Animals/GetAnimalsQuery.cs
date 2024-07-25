@@ -8,7 +8,6 @@ public class GetAnimalsQuery
 {
     private readonly PetSitterReadDbContext _dbContext;
 
-
     public GetAnimalsQuery(PetSitterReadDbContext dbContext)
     {
         _dbContext = dbContext;

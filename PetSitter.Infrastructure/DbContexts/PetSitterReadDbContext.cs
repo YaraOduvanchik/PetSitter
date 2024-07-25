@@ -17,6 +17,8 @@ public class PetSitterReadDbContext : DbContext
     public DbSet<UserDto> Users => Set<UserDto>();
     public DbSet<AnimalDto> Animals => Set<AnimalDto>();
     public DbSet<SitterDto> Sitters => Set<SitterDto>();
+    public DbSet<DiseaseDto> Diseases => Set<DiseaseDto>();
+    public DbSet<VaccinationDto> Vaccinations => Set<VaccinationDto>();
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {

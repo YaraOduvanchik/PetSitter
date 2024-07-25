@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using PetSitter.Application.Features.Animals;
+using PetSitter.Application.Features.Diseases;
 using PetSitter.Application.Features.Sitters;
 using PetSitter.Application.Features.Users;
 using PetSitter.Infrastructure.DbContexts;
@@ -27,6 +28,7 @@ public static class DependencyRegistration
         services.AddScoped<IUserRepository, UserRepository>();
         services.AddScoped<IAnimalsRepository, AnimalRepository>();
         services.AddScoped<ISitterRepository, SitterRepository>();
+        services.AddScoped<IDiseaseRepository, DiseaseRepository>();
 
         return services;
     }

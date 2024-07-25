@@ -4,29 +4,46 @@ namespace PetSitter.API.Validation;
 
 public class Envelope
 {
-    private Envelope(object? result, Error? error)
+    public object? Result { get; }
+
+    public List<ErrorInfo>? ErrorInfo { get; }
+
+    public DateTime TimeGenerated { get; }
+
+    private Envelope(object? result, List<ErrorInfo>? errors)
     {
         Result = result;
 
-        ErrorCode = error?.Code;
-
-        ErrorMessage = error?.Message;
+        ErrorInfo = errors;
 
         TimeGenerated = DateTime.Now;
     }
-
-    public object? Result { get; }
-    public string? ErrorCode { get; }
-    public string? ErrorMessage { get; }
-    public DateTime? TimeGenerated { get; }
 
     public static Envelope Ok(object? result = null)
     {
         return new Envelope(result, null);
     }
 
-    public static Envelope Error(Error? error)
+    public static Envelope Error(List<ErrorInfo>? error)
     {
         return new Envelope(null, error);
+    }
+}
+
+public class ErrorInfo
+{
+    public string? ErrorCode { get; }
+
+    public string? ErrorMessage { get; }
+
+    public string? InvalidField { get; }
+
+    public ErrorInfo(Error? error, string? invalidField = null)
+    {
+        ErrorCode = error?.Code;
+
+        ErrorMessage = error?.Message;
+
+        InvalidField = invalidField;
     }
 }

@@ -12,15 +12,22 @@ public class CustomResultFactory : IFluentValidationAutoValidationResultFactory
         ValidationProblemDetails? validationProblemDetails)
     {
         if (validationProblemDetails is null)
-            return new BadRequestObjectResult("Invalid error");
+        {
+            throw new("ValidationProblemDetails is null");
+        }
 
-        var validationError = validationProblemDetails.Errors.First();
+        List<ErrorInfo> errorInfos = [];
 
-        var errorString = validationError.Value.First();
+        foreach (var (invalidField, validationErrors) in validationProblemDetails.Errors)
+        {
+            var errors = validationErrors
+                .Select(Error.Deserialize)
+                .Select(e => new ErrorInfo(e, invalidField));
 
-        var error = Error.Deserialize(errorString);
+            errorInfos.AddRange(errors);
+        }
 
-        var envelope = Envelope.Error(error);
+        var envelope = Envelope.Error(errorInfos);
 
         return new BadRequestObjectResult(envelope);
     }

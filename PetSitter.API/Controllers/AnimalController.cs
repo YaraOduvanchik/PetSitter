@@ -2,7 +2,6 @@
 using PetSitter.Application.Features.Animals.CreateAnimal;
 using PetSitter.Application.Features.Animals.GetAnimals;
 using PetSitter.Application.Features.Diseases.CreateDisease;
-using PetSitter.Domain.Entities;
 using PetSitter.Infrastructure.Queries.Animals;
 
 namespace PetSitter.API.Controllers;
@@ -34,18 +33,18 @@ public class AnimalController : ApplicationController
 
         return Ok(response);
     }
-    
-    // [HttpPost("disease")]
-    // public async Task<IActionResult> Create(
-    //     [FromServices] CreateDiseaseService service,
-    //     [FromBody] CreateDiseaseRequest request,
-    //     CancellationToken ct)
-    // {
-    //     var idResult = await service.Handle(request, ct);
-    //
-    //     if (idResult.IsFailure)
-    //         return BadRequest(idResult.Error);
-    //
-    //     return Ok(idResult.Value);
-    // }
+
+    [HttpPost("disease")]
+    public async Task<IActionResult> Create(
+        [FromServices] CreateDiseaseService service,
+        [FromBody] CreateDiseaseRequest request,
+        CancellationToken ct)
+    {
+        var idResult = await service.Handle(request, ct);
+
+        if (idResult.IsFailure)
+            return BadRequest(idResult.Error);
+
+        return Ok(idResult.Value);
+    }
 }

@@ -4,6 +4,8 @@ namespace PetSitter.Domain.Common;
 
 public class Error
 {
+    public const string Separator = "||";
+
     public Error(string code, string message)
     {
         Code = code;
@@ -15,12 +17,17 @@ public class Error
 
     public string Serialize()
     {
-        return JsonSerializer.Serialize(this);
+        return $"{Code}{Separator}{Message}";
     }
 
     public static Error? Deserialize(string serialized)
     {
-        return JsonSerializer.Deserialize<Error>(serialized);
+        var data = serialized.Split([Separator], StringSplitOptions.RemoveEmptyEntries);
+
+        if (data.Length < 2)
+            throw new($"Invalid error serialization: '{serialized}'");
+
+        return new(data[0], data[1]);
     }
 }
 

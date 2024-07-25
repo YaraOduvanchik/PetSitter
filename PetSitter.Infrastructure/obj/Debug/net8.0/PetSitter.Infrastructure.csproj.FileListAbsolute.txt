@@ -24,11 +24,9 @@ C:\Users\user\Documents\GitHub\PetSitterBackend\PetSitter.Infrastructure\bin\Deb
 C:\Users\user\Documents\GitHub\PetSitterBackend\PetSitter.Infrastructure\bin\Debug\net8.0\PetSitter.Infrastructure.runtimeconfig.json
 C:\Users\user\Documents\GitHub\PetSitterBackend\PetSitter.Infrastructure\bin\Debug\net8.0\PetSitter.Infrastructure.dll
 C:\Users\user\Documents\GitHub\PetSitterBackend\PetSitter.Infrastructure\bin\Debug\net8.0\PetSitter.Infrastructure.pdb
-C:\Users\user\Documents\GitHub\PetSitterBackend\PetSitter.Infrastructure\bin\Debug\net8.0\Contracts.dll
 C:\Users\user\Documents\GitHub\PetSitterBackend\PetSitter.Infrastructure\bin\Debug\net8.0\PetSitter.Application.dll
 C:\Users\user\Documents\GitHub\PetSitterBackend\PetSitter.Infrastructure\bin\Debug\net8.0\PetSitter.Domain.dll
 C:\Users\user\Documents\GitHub\PetSitterBackend\PetSitter.Infrastructure\bin\Debug\net8.0\PetSitter.Application.pdb
-C:\Users\user\Documents\GitHub\PetSitterBackend\PetSitter.Infrastructure\bin\Debug\net8.0\Contracts.pdb
 C:\Users\user\Documents\GitHub\PetSitterBackend\PetSitter.Infrastructure\bin\Debug\net8.0\PetSitter.Domain.pdb
 C:\Users\user\Documents\GitHub\PetSitterBackend\PetSitter.Infrastructure\obj\Debug\net8.0\PetSitter.Infrastructure.csproj.AssemblyReference.cache
 C:\Users\user\Documents\GitHub\PetSitterBackend\PetSitter.Infrastructure\obj\Debug\net8.0\PetSitter.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
