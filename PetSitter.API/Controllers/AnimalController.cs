@@ -11,7 +11,7 @@ public class AnimalController : ApplicationController
 {
     [HttpPost]
     public async Task<IActionResult> Create(
-        [FromServices] CreateAnimalService service,
+        [FromServices] CreateAnimalHandler service,
         [FromBody] CreateAnimalRequest request,
         CancellationToken ct)
     {
@@ -36,7 +36,7 @@ public class AnimalController : ApplicationController
 
     [HttpPost("disease")]
     public async Task<IActionResult> Create(
-        [FromServices] CreateDiseaseService service,
+        [FromServices] CreateDiseaseHandler service,
         [FromBody] CreateDiseaseRequest request,
         CancellationToken ct)
     {

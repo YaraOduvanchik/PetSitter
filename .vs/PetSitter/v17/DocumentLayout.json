@@ -3,20 +3,44 @@
   "WorkspaceRootPath": "C:\\Users\\user\\Documents\\GitHub\\PetSitterBackend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D5ECDE7D-49F9-4E40-BC3D-1DFE06240F3F}|PetSitter.Application\\PetSitter.Application.csproj|c:\\users\\user\\documents\\github\\petsitterbackend\\petsitter.application\\commonvalidators\\customvalidators.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D5ECDE7D-49F9-4E40-BC3D-1DFE06240F3F}|PetSitter.Application\\PetSitter.Application.csproj|solutionrelative:petsitter.application\\commonvalidators\\customvalidators.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C1D417B4-31EB-41B6-A41E-DD93A9729FEC}|PetSitter.API\\PetSitter.API.csproj|c:\\users\\user\\documents\\github\\petsitterbackend\\petsitter.api\\validation\\customresultfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C1D417B4-31EB-41B6-A41E-DD93A9729FEC}|PetSitter.API\\PetSitter.API.csproj|solutionrelative:petsitter.api\\validation\\customresultfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D5ECDE7D-49F9-4E40-BC3D-1DFE06240F3F}|PetSitter.Application\\PetSitter.Application.csproj|c:\\users\\user\\documents\\github\\petsitterbackend\\petsitter.application\\features\\animals\\ianimalrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D5ECDE7D-49F9-4E40-BC3D-1DFE06240F3F}|PetSitter.Application\\PetSitter.Application.csproj|solutionrelative:petsitter.application\\features\\animals\\ianimalrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D5ECDE7D-49F9-4E40-BC3D-1DFE06240F3F}|PetSitter.Application\\PetSitter.Application.csproj|c:\\users\\user\\documents\\github\\petsitterbackend\\petsitter.application\\features\\sitters\\uploadphoto\\uploadanimalphotohandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D5ECDE7D-49F9-4E40-BC3D-1DFE06240F3F}|PetSitter.Application\\PetSitter.Application.csproj|solutionrelative:petsitter.application\\features\\sitters\\uploadphoto\\uploadanimalphotohandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2079ED70-56A7-403D-83F6-C7731A12AF50}|PetSitter.Infrastructure\\PetSitter.Infrastructure.csproj|c:\\users\\user\\documents\\github\\petsitterbackend\\petsitter.infrastructure\\repository\\animalrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2079ED70-56A7-403D-83F6-C7731A12AF50}|PetSitter.Infrastructure\\PetSitter.Infrastructure.csproj|solutionrelative:petsitter.infrastructure\\repository\\animalrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA32AC3F-60C9-4856-BE24-FBC752B00114}|PetSitter.Domain\\PetSitter.Domain.csproj|c:\\users\\user\\documents\\github\\petsitterbackend\\petsitter.domain\\entities\\animal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA32AC3F-60C9-4856-BE24-FBC752B00114}|PetSitter.Domain\\PetSitter.Domain.csproj|solutionrelative:petsitter.domain\\entities\\animal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C1D417B4-31EB-41B6-A41E-DD93A9729FEC}|PetSitter.API\\PetSitter.API.csproj|c:\\users\\user\\documents\\github\\petsitterbackend\\petsitter.api\\middlewares\\exceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C1D417B4-31EB-41B6-A41E-DD93A9729FEC}|PetSitter.API\\PetSitter.API.csproj|solutionrelative:petsitter.api\\middlewares\\exceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2079ED70-56A7-403D-83F6-C7731A12AF50}|PetSitter.Infrastructure\\PetSitter.Infrastructure.csproj|c:\\users\\user\\documents\\github\\petsitterbackend\\petsitter.infrastructure\\services\\minioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2079ED70-56A7-403D-83F6-C7731A12AF50}|PetSitter.Infrastructure\\PetSitter.Infrastructure.csproj|solutionrelative:petsitter.infrastructure\\services\\minioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FA32AC3F-60C9-4856-BE24-FBC752B00114}|PetSitter.Domain\\PetSitter.Domain.csproj|c:\\users\\user\\documents\\github\\petsitterbackend\\petsitter.domain\\common\\error.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FA32AC3F-60C9-4856-BE24-FBC752B00114}|PetSitter.Domain\\PetSitter.Domain.csproj|solutionrelative:petsitter.domain\\common\\error.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C1D417B4-31EB-41B6-A41E-DD93A9729FEC}|PetSitter.API\\PetSitter.API.csproj|c:\\users\\user\\documents\\github\\petsitterbackend\\petsitter.api\\validation\\envelope.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C1D417B4-31EB-41B6-A41E-DD93A9729FEC}|PetSitter.API\\PetSitter.API.csproj|solutionrelative:petsitter.api\\validation\\envelope.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FA32AC3F-60C9-4856-BE24-FBC752B00114}|PetSitter.Domain\\PetSitter.Domain.csproj|c:\\users\\user\\documents\\github\\petsitterbackend\\petsitter.domain\\entities\\photo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA32AC3F-60C9-4856-BE24-FBC752B00114}|PetSitter.Domain\\PetSitter.Domain.csproj|solutionrelative:petsitter.domain\\entities\\photo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA32AC3F-60C9-4856-BE24-FBC752B00114}|PetSitter.Domain\\PetSitter.Domain.csproj|c:\\users\\user\\documents\\github\\petsitterbackend\\petsitter.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA32AC3F-60C9-4856-BE24-FBC752B00114}|PetSitter.Domain\\PetSitter.Domain.csproj|solutionrelative:petsitter.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,62 +50,140 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CustomResultFactory.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\PetSitterBackend\\PetSitter.API\\Validation\\CustomResultFactory.cs",
+              "RelativeDocumentMoniker": "PetSitter.API\\Validation\\CustomResultFactory.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\PetSitterBackend\\PetSitter.API\\Validation\\CustomResultFactory.cs",
+              "RelativeToolTip": "PetSitter.API\\Validation\\CustomResultFactory.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-29T09:49:24.752Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IAnimalRepository.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\PetSitterBackend\\PetSitter.Application\\Features\\Animals\\IAnimalRepository.cs",
+              "RelativeDocumentMoniker": "PetSitter.Application\\Features\\Animals\\IAnimalRepository.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\PetSitterBackend\\PetSitter.Application\\Features\\Animals\\IAnimalRepository.cs",
+              "RelativeToolTip": "PetSitter.Application\\Features\\Animals\\IAnimalRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-29T09:43:03.279Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AnimalRepository.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\PetSitterBackend\\PetSitter.Infrastructure\\Repository\\AnimalRepository.cs",
+              "RelativeDocumentMoniker": "PetSitter.Infrastructure\\Repository\\AnimalRepository.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\PetSitterBackend\\PetSitter.Infrastructure\\Repository\\AnimalRepository.cs",
+              "RelativeToolTip": "PetSitter.Infrastructure\\Repository\\AnimalRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-29T09:40:31.753Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MinioService.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\PetSitterBackend\\PetSitter.Infrastructure\\Services\\MinioService.cs",
+              "RelativeDocumentMoniker": "PetSitter.Infrastructure\\Services\\MinioService.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\PetSitterBackend\\PetSitter.Infrastructure\\Services\\MinioService.cs",
+              "RelativeToolTip": "PetSitter.Infrastructure\\Services\\MinioService.cs",
+              "ViewState": "AQIAABoAAAAAAAAAAAAgwDIAAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-29T09:28:57.742Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ExceptionMiddleware.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\PetSitterBackend\\PetSitter.API\\Middlewares\\ExceptionMiddleware.cs",
+              "RelativeDocumentMoniker": "PetSitter.API\\Middlewares\\ExceptionMiddleware.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\PetSitterBackend\\PetSitter.API\\Middlewares\\ExceptionMiddleware.cs",
+              "RelativeToolTip": "PetSitter.API\\Middlewares\\ExceptionMiddleware.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-29T09:23:03.3Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Error.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\PetSitterBackend\\PetSitter.Domain\\Common\\Error.cs",
+              "RelativeDocumentMoniker": "PetSitter.Domain\\Common\\Error.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\PetSitterBackend\\PetSitter.Domain\\Common\\Error.cs",
+              "RelativeToolTip": "PetSitter.Domain\\Common\\Error.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAA0wCYAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-29T08:59:11.002Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Animal.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\PetSitterBackend\\PetSitter.Domain\\Entities\\Animal.cs",
+              "RelativeDocumentMoniker": "PetSitter.Domain\\Entities\\Animal.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\PetSitterBackend\\PetSitter.Domain\\Entities\\Animal.cs",
+              "RelativeToolTip": "PetSitter.Domain\\Entities\\Animal.cs",
+              "ViewState": "AQIAADoAAAAAAAAAAAAYwEgAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-29T08:54:53.352Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\PetSitterBackend\\PetSitter.Domain\\Entities\\User.cs",
+              "RelativeDocumentMoniker": "PetSitter.Domain\\Entities\\User.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\PetSitterBackend\\PetSitter.Domain\\Entities\\User.cs",
+              "RelativeToolTip": "PetSitter.Domain\\Entities\\User.cs",
+              "ViewState": "AQIAABsAAAAAAAAAAAAowCgAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-29T08:48:58.086Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CustomValidators.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\PetSitterBackend\\PetSitter.Application\\CommonValidators\\CustomValidators.cs",
-              "RelativeDocumentMoniker": "PetSitter.Application\\CommonValidators\\CustomValidators.cs",
-              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\PetSitterBackend\\PetSitter.Application\\CommonValidators\\CustomValidators.cs",
-              "RelativeToolTip": "PetSitter.Application\\CommonValidators\\CustomValidators.cs",
-              "ViewState": "AQIAADcAAAAAAAAAAAAcwEgAAAABAAAA",
+              "DocumentIndex": 8,
+              "Title": "Photo.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\PetSitterBackend\\PetSitter.Domain\\Entities\\Photo.cs",
+              "RelativeDocumentMoniker": "PetSitter.Domain\\Entities\\Photo.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\PetSitterBackend\\PetSitter.Domain\\Entities\\Photo.cs",
+              "RelativeToolTip": "PetSitter.Domain\\Entities\\Photo.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAowB8AAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-25T11:59:29.621Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Envelope.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\PetSitterBackend\\PetSitter.API\\Validation\\Envelope.cs",
-              "RelativeDocumentMoniker": "PetSitter.API\\Validation\\Envelope.cs",
-              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\PetSitterBackend\\PetSitter.API\\Validation\\Envelope.cs",
-              "RelativeToolTip": "PetSitter.API\\Validation\\Envelope.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAQwDAAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-25T11:49:11.013Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CustomResultFactory.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\PetSitterBackend\\PetSitter.API\\Validation\\CustomResultFactory.cs",
-              "RelativeDocumentMoniker": "PetSitter.API\\Validation\\CustomResultFactory.cs",
-              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\PetSitterBackend\\PetSitter.API\\Validation\\CustomResultFactory.cs",
-              "RelativeToolTip": "PetSitter.API\\Validation\\CustomResultFactory.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-25T11:42:48.981Z",
+              "WhenOpened": "2024-07-29T07:43:40.795Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Error.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\PetSitterBackend\\PetSitter.Domain\\Common\\Error.cs",
-              "RelativeDocumentMoniker": "PetSitter.Domain\\Common\\Error.cs",
-              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\PetSitterBackend\\PetSitter.Domain\\Common\\Error.cs",
-              "RelativeToolTip": "PetSitter.Domain\\Common\\Error.cs",
-              "ViewState": "AQIAABwAAAAAAAAAAAAIwCsAAAAmAAAA",
+              "Title": "UploadAnimalPhotoHandler.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\PetSitterBackend\\PetSitter.Application\\Features\\Sitters\\UploadPhoto\\UploadAnimalPhotoHandler.cs",
+              "RelativeDocumentMoniker": "PetSitter.Application\\Features\\Sitters\\UploadPhoto\\UploadAnimalPhotoHandler.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\PetSitterBackend\\PetSitter.Application\\Features\\Sitters\\UploadPhoto\\UploadAnimalPhotoHandler.cs",
+              "RelativeToolTip": "PetSitter.Application\\Features\\Sitters\\UploadPhoto\\UploadAnimalPhotoHandler.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAC8AAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-25T11:38:16.796Z",
+              "WhenOpened": "2024-07-27T08:35:25.572Z",
               "EditorCaption": ""
             }
           ]

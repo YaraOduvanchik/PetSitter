@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Minio;
+using Minio.DataModel.Args;
 using PetSitter.Application.Features.Sitters.CreateSitter;
 using PetSitter.Application.Features.Sitters.GetSitters;
+using PetSitter.Application.Features.Sitters.UploadPhoto;
 using PetSitter.Infrastructure.Queries.Sitters;
 
 namespace PetSitter.API.Controllers;
@@ -10,7 +13,7 @@ public class SitterController : ApplicationController
 {
     [HttpPost]
     public async Task<IActionResult> Create(
-        [FromServices] CreateSitterService service,
+        [FromServices] CreateSitterHandler service,
         [FromBody] CreatedSitterRequest request,
         CancellationToken ct)
     {
@@ -31,5 +34,28 @@ public class SitterController : ApplicationController
         var response = await query.Handle(request, ct);
 
         return Ok(response);
+    }
+
+    //[HttpGet]
+    //public async Task<IActionResult> AddPhoto(
+    //    [FromForm] UploadAnimalPhotoRequest request)
+    //{
+        
+
+    //}
+
+    [HttpGet]
+    public async Task<IActionResult> GetPhoto(
+        string photo,
+        [FromServices] IMinioClient client)
+    {
+        var presignedGetObjectAsync = new PresignedGetObjectArgs()
+            .WithBucket("images")
+            .WithObject(photo)
+            .WithExpiry(604800);
+
+        var url = await client.PresignedGetObjectAsync(presignedGetObjectAsync);
+
+        return Ok(url);
     }
 }

@@ -4,18 +4,18 @@ using PetSitter.Domain.Entities;
 
 namespace PetSitter.Application.Features.Animals.CreateAnimal;
 
-public class CreateAnimalService
+public class CreateAnimalHandler
 {
-    private readonly IAnimalsRepository _animalsRepository;
+    private readonly IAnimalRepository _animalsRepository;
 
-    public CreateAnimalService(IAnimalsRepository animalsRepository)
+    public CreateAnimalHandler(IAnimalRepository animalsRepository)
     {
         _animalsRepository = animalsRepository;
     }
 
     public async Task<Result<Guid, Error>> Handle(CreateAnimalRequest request, CancellationToken ct)
     {
-        var photos = request.Photos.Select(p => Photo.Create(p.Path, p.IsMain).Value);
+        var photos = request.Photos.Select(p => Photo.CreateAndActivate(p.Id ,p.Path).Value);
         var diseases = request.Diseases.Select(d => Disease.Create(d.Name, d.Symptom).Value);
         var vaccinations =
             request.Vaccinations.Select(v => Vaccination.Create(v.Name, v.DurationDay, v.IsTimeLimit).Value);

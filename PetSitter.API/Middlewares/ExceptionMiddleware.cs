@@ -1,4 +1,5 @@
 ﻿using System.Net;
+using PetSitter.API.Validation;
 using PetSitter.Domain.Common;
 
 namespace PetSitter.API.Middlewares;
@@ -24,12 +25,16 @@ public class ExceptionMiddleware
         {
             _logger.LogError(ex.Message);
 
+            var errorInfo = new ErrorInfo(Errors.General.Internal(ex.Message));
+
+            var envelope = Envelope.Error([errorInfo]);
+
             var error = new Error("server.internal", ex.Message);
 
             context.Response.ContentType = "application/json";
             context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
 
-            await context.Response.WriteAsJsonAsync(error);
+            await context.Response.WriteAsJsonAsync(envelope);
         }
     }
 }

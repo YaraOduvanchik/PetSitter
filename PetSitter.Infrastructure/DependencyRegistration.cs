@@ -1,9 +1,12 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Minio;
 using PetSitter.Application.Features.Animals;
 using PetSitter.Application.Features.Diseases;
 using PetSitter.Application.Features.Sitters;
 using PetSitter.Application.Features.Users;
 using PetSitter.Infrastructure.DbContexts;
+using PetSitter.Infrastructure.Options;
 using PetSitter.Infrastructure.Queries.Animals;
 using PetSitter.Infrastructure.Queries.Sitters;
 using PetSitter.Infrastructure.Queries.Users;
@@ -13,11 +16,11 @@ namespace PetSitter.Infrastructure;
 
 public static class DependencyRegistration
 {
-    public static IServiceCollection AddInfrastructure(this IServiceCollection services)
+    public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
     {
         services
             .AddRepositories()
-            .AddDatabase()
+            .AddDataStorages(configuration)
             .AddQueries();
 
         return services;
@@ -26,7 +29,7 @@ public static class DependencyRegistration
     private static IServiceCollection AddRepositories(this IServiceCollection services)
     {
         services.AddScoped<IUserRepository, UserRepository>();
-        services.AddScoped<IAnimalsRepository, AnimalRepository>();
+        services.AddScoped<IAnimalRepository, AnimalRepository>();
         services.AddScoped<ISitterRepository, SitterRepository>();
         services.AddScoped<IDiseaseRepository, DiseaseRepository>();
 
@@ -42,10 +45,22 @@ public static class DependencyRegistration
         return services;
     }
 
-    private static IServiceCollection AddDatabase(this IServiceCollection services)
+    private static IServiceCollection AddDataStorages(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddScoped<PetSitterWriteDbContext>();
         services.AddScoped<PetSitterReadDbContext>();
+
+        services.AddMinio(options =>
+        {
+            var minioOptions = configuration
+            .GetSection(MinioOptions.Minio)
+            .Get<MinioOptions>() 
+            ?? throw new("Minio configuration not found");
+
+            options.WithEndpoint(minioOptions.Endpoint);
+            options.WithCredentials(minioOptions.AccsessKey, minioOptions.SecretKey);
+            options.WithSSL(false);
+        });
 
         return services;
     }

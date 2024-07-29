@@ -17,7 +17,6 @@ public class CustomResultFactory : IFluentValidationAutoValidationResultFactory
         }
 
         List<ErrorInfo> errorInfos = [];
-
         foreach (var (invalidField, validationErrors) in validationProblemDetails.Errors)
         {
             var errors = validationErrors
@@ -27,7 +26,7 @@ public class CustomResultFactory : IFluentValidationAutoValidationResultFactory
             errorInfos.AddRange(errors);
         }
 
-        var envelope = Envelope.Error(errorInfos);
+        var envelope = Envelope.Error(errorInfos.ToArray());
 
         return new BadRequestObjectResult(envelope);
     }

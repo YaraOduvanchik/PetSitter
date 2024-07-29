@@ -22,7 +22,7 @@ public static class CustomValidators
     }
 
     public static IRuleBuilderOptions<T, TProperty> NotEmptyWithError<T, TProperty>(
-        this IRuleBuilder<T, TProperty> ruleBuilder, int maxLength)
+        this IRuleBuilder<T, TProperty> ruleBuilder)
     {
         return ruleBuilder
             .NotEmpty()

@@ -37,6 +37,14 @@ public class User
     public PhoneNumber PhoneNumber { get; private set; }
     public Address Address { get; private set; }
 
+    public IReadOnlyList<Animal> Animals => _animals;
+    private readonly List<Animal> _animals = [];
+
+    public void PublishAnimal(Animal animal)
+    {
+        _animals.Add(animal);
+    }
+
     public static Result<User, Error> Create(
         string name,
         string surname,

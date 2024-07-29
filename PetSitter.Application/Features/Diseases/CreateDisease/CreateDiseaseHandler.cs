@@ -4,11 +4,11 @@ using PetSitter.Domain.Entities;
 
 namespace PetSitter.Application.Features.Diseases.CreateDisease;
 
-public class CreateDiseaseService
+public class CreateDiseaseHandler
 {
     private readonly IDiseaseRepository _diseaseRepository;
 
-    public CreateDiseaseService(IDiseaseRepository diseaseRepository)
+    public CreateDiseaseHandler(IDiseaseRepository diseaseRepository)
     {
         _diseaseRepository = diseaseRepository;
     }

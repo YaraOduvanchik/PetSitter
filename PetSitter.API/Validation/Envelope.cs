@@ -10,23 +10,23 @@ public class Envelope
 
     public DateTime TimeGenerated { get; }
 
-    private Envelope(object? result, List<ErrorInfo>? errors)
+    private Envelope(object? result, IEnumerable<ErrorInfo>? errors)
     {
         Result = result;
 
-        ErrorInfo = errors;
+        ErrorInfo = errors?.ToList();
 
         TimeGenerated = DateTime.Now;
     }
 
     public static Envelope Ok(object? result = null)
     {
-        return new Envelope(result, null);
+        return new(result, null);
     }
 
-    public static Envelope Error(List<ErrorInfo>? error)
+    public static Envelope Error(params ErrorInfo[] errors)
     {
-        return new Envelope(null, error);
+        return new(null, errors);
     }
 }
 

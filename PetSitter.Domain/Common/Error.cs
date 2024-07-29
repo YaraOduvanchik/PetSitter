@@ -35,6 +35,12 @@ public static class Errors
 {
     public static class General
     {
+        public static Error Internal(string message) =>
+            new("internal", message);
+
+        public static Error Unexpected() =>
+            new("unexpected", "unexpected");
+
         public static Error NotFound(Guid? id = null)
         {
             var forId = id == null ? "" : $" for Id '{id}'";
@@ -69,6 +75,14 @@ public static class Errors
         {
             var label = name ?? "Value";
             return new Error("record.cant.save", $"{label} can not be save");
+        }
+    }
+
+    public static class Animals
+    {
+        public static Error PhotoCountLimit()
+        {
+            return new("animals.photo.limit", "Max photo count limit is 5");
         }
     }
 }

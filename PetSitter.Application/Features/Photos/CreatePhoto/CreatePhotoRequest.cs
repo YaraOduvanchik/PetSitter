@@ -3,6 +3,7 @@
 namespace PetSitter.Application.Features.Photos.CreatePhoto;
 
 public record CreatePhotoRequest(
+    Guid Id,
     string Path,
     bool IsMain);
 

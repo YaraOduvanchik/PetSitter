@@ -6,7 +6,10 @@ namespace PetSitter.Domain.Entities;
 public class Animal
 {
     public const int MAX_NAME_LENGTH = 100;
+
     public const int MAX_DESCRIPTION_LENGTH = 300;
+
+    private const int PHOTO_COUNT_LIMIT = 5;
     
     private Animal()
     {
@@ -67,9 +70,14 @@ public class Animal
     private readonly List<Vaccination> _vaccinations = [];
    
     
-    public void AddPhoto(Photo photo)
+    public Result<bool, Error> AddPhoto(Photo photo)
     {
+        if (_photos.Count > PHOTO_COUNT_LIMIT)
+            return Errors.Animals.PhotoCountLimit();
+
         _photos.Add(photo);
+
+        return true;
     }
     
     public void AddDisease(Disease disease)

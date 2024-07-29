@@ -32,4 +32,15 @@ public class SitterRepository : ISitterRepository
     {
         return await _dbContext.Sitters.AsNoTracking().ToListAsync(ct);
     }
+
+    public async Task<Result<Sitter, Error>> GetById(Guid id, CancellationToken ct)
+    {
+        var application = await _dbContext.Sitters
+            .FirstOrDefaultAsync(s => s.Id == id, cancellationToken: ct);
+
+        if (application is null)
+            return Errors.General.NotFound(id);
+
+        return application;
+    }
 }

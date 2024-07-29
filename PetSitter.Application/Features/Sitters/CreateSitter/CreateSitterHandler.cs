@@ -5,11 +5,11 @@ using PetSitter.Domain.ValueObjects;
 
 namespace PetSitter.Application.Features.Sitters.CreateSitter;
 
-public class CreateSitterService
+public class CreateSitterHandler
 {
     private readonly ISitterRepository _sitterRepository;
 
-    public CreateSitterService(ISitterRepository sitterRepository)
+    public CreateSitterHandler(ISitterRepository sitterRepository)
     {
         _sitterRepository = sitterRepository;
     }
