@@ -9,9 +9,8 @@ public class Photo
     {
     }
 
-    private Photo(Guid id, string path, bool isMain)
+    private Photo(string path, bool isMain)
     {
-        Id = id;
         Path = path;
         IsMain = isMain;
     }
@@ -22,11 +21,11 @@ public class Photo
 
     public bool IsMain { get; private set; }
 
-    public static Result<Photo, Error> CreateAndActivate(Guid id, string path)
+    public static Result<Photo, Error> CreateAndActivate(string path)
     {
         if (string.IsNullOrWhiteSpace(path))
             return Errors.General.ValueIsRequired(path);
 
-        return new Photo(id, path, true);
+        return new Photo(path, true);
     }
 }

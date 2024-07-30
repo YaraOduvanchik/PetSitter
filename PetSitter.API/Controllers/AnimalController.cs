@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Minio;
+using Minio.DataModel.Args;
 using PetSitter.Application.Features.Animals.CreateAnimal;
 using PetSitter.Application.Features.Animals.GetAnimals;
+using PetSitter.Application.Features.Animals.UploadPhoto;
 using PetSitter.Application.Features.Diseases.CreateDisease;
 using PetSitter.Infrastructure.Queries.Animals;
 
@@ -20,6 +23,7 @@ public class AnimalController : ApplicationController
         if (idResult.IsFailure)
             return BadRequest(idResult.Error);
 
+
         return Ok(idResult.Value);
     }
 
@@ -30,21 +34,50 @@ public class AnimalController : ApplicationController
         CancellationToken ct)
     {
         var response = await query.Handle(request, ct);
-
+    
         return Ok(response);
     }
-
-    [HttpPost("disease")]
-    public async Task<IActionResult> Create(
-        [FromServices] CreateDiseaseHandler service,
-        [FromBody] CreateDiseaseRequest request,
+    
+    [HttpPost("photo")]
+    public async Task<IActionResult> UploadPhoto(
+        [FromServices] UploadAnimalPhotoHandler handler,
+        [FromForm] UploadAnimalPhotoRequest request,
         CancellationToken ct)
     {
-        var idResult = await service.Handle(request, ct);
+        var result = await handler.Handle(request, ct);
 
-        if (idResult.IsFailure)
-            return BadRequest(idResult.Error);
+        if(result.IsFailure)
+            return BadRequest(result.Error);
 
-        return Ok(idResult.Value);
+        return Ok(result.Value);
     }
+    
+    [HttpGet("photo")]
+    public async Task<IActionResult> GetPhoto(
+        string photo,
+        [FromServices] IMinioClient client)
+    {
+        var presignedGetObjectAsync = new PresignedGetObjectArgs()
+            .WithBucket("images")
+            .WithObject(photo)
+            .WithExpiry(604800);
+
+        var url = await client.PresignedGetObjectAsync(presignedGetObjectAsync);
+
+        return Ok(url);
+    }
+
+    // [HttpPost("disease")]
+    // public async Task<IActionResult> Create(
+    //     [FromServices] CreateDiseaseHandler service,
+    //     [FromBody] CreateDiseaseRequest request,
+    //     CancellationToken ct)
+    // {
+    //     var idResult = await service.Handle(request, ct);
+    //
+    //     if (idResult.IsFailure)
+    //         return BadRequest(idResult.Error);
+    //
+    //     return Ok(idResult.Value);
+    // }
 }

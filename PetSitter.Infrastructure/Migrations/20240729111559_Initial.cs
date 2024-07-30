@@ -65,7 +65,8 @@ namespace PetSitter.Infrastructure.Migrations
                     gender = table.Column<string>(type: "text", nullable: false),
                     birthday = table.Column<DateTimeOffset>(type: "timestamp with time zone", nullable: false),
                     breed = table.Column<string>(type: "text", nullable: false),
-                    weight = table.Column<float>(type: "real", nullable: false)
+                    weight = table.Column<float>(type: "real", nullable: false),
+                    user_id1 = table.Column<Guid>(type: "uuid", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -76,6 +77,11 @@ namespace PetSitter.Infrastructure.Migrations
                         principalTable: "users",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "fk_animals_users_user_id1",
+                        column: x => x.user_id1,
+                        principalTable: "users",
+                        principalColumn: "id");
                 });
 
             migrationBuilder.CreateTable(
@@ -163,6 +169,11 @@ namespace PetSitter.Infrastructure.Migrations
                 name: "ix_animals_user_id",
                 table: "animals",
                 column: "user_id");
+
+            migrationBuilder.CreateIndex(
+                name: "ix_animals_user_id1",
+                table: "animals",
+                column: "user_id1");
 
             migrationBuilder.CreateIndex(
                 name: "ix_announcements_animal_id",

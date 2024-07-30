@@ -13,7 +13,7 @@ using PetSitter.Infrastructure.DbContexts;
 namespace PetSitter.Infrastructure.Migrations
 {
     [DbContext(typeof(PetSitterWriteDbContext))]
-    [Migration("20240725103154_Initial")]
+    [Migration("20240729111559_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -66,6 +66,10 @@ namespace PetSitter.Infrastructure.Migrations
                         .HasColumnType("uuid")
                         .HasColumnName("user_id");
 
+                    b.Property<Guid?>("UserId1")
+                        .HasColumnType("uuid")
+                        .HasColumnName("user_id1");
+
                     b.Property<float>("Weight")
                         .HasColumnType("real")
                         .HasColumnName("weight");
@@ -75,6 +79,9 @@ namespace PetSitter.Infrastructure.Migrations
 
                     b.HasIndex("UserId")
                         .HasDatabaseName("ix_animals_user_id");
+
+                    b.HasIndex("UserId1")
+                        .HasDatabaseName("ix_animals_user_id1");
 
                     b.ToTable("animals", (string)null);
                 });
@@ -340,6 +347,11 @@ namespace PetSitter.Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired()
                         .HasConstraintName("fk_animals_users_user_id");
+
+                    b.HasOne("PetSitter.Domain.Entities.User", null)
+                        .WithMany("Animals")
+                        .HasForeignKey("UserId1")
+                        .HasConstraintName("fk_animals_users_user_id1");
                 });
 
             modelBuilder.Entity("PetSitter.Domain.Entities.Announcement", b =>
@@ -389,6 +401,11 @@ namespace PetSitter.Infrastructure.Migrations
                     b.Navigation("Photos");
 
                     b.Navigation("Vaccinations");
+                });
+
+            modelBuilder.Entity("PetSitter.Domain.Entities.User", b =>
+                {
+                    b.Navigation("Animals");
                 });
 #pragma warning restore 612, 618
         }

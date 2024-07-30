@@ -233,23 +233,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\user\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\chera\\.nuget\\packages\\": {},
+    "D:\\IDE\\VisualStudio2022\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\Documents\\GitHub\\PetSitterBackend\\PetSitter.Application\\PetSitter.Application.csproj",
+      "projectUniqueName": "F:\\Programming\\GitHub\\PetSitterBackend\\PetSitter.Application\\PetSitter.Application.csproj",
       "projectName": "PetSitter.Application",
-      "projectPath": "C:\\Users\\user\\Documents\\GitHub\\PetSitterBackend\\PetSitter.Application\\PetSitter.Application.csproj",
-      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user\\Documents\\GitHub\\PetSitterBackend\\PetSitter.Application\\obj\\",
+      "projectPath": "F:\\Programming\\GitHub\\PetSitterBackend\\PetSitter.Application\\PetSitter.Application.csproj",
+      "packagesPath": "C:\\Users\\chera\\.nuget\\packages\\",
+      "outputPath": "F:\\Programming\\GitHub\\PetSitterBackend\\PetSitter.Application\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "D:\\IDE\\VisualStudio2022\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\chera\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -258,15 +258,15 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
+        "c:\\program files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\user\\Documents\\GitHub\\PetSitterBackend\\PetSitter.Domain\\PetSitter.Domain.csproj": {
-              "projectPath": "C:\\Users\\user\\Documents\\GitHub\\PetSitterBackend\\PetSitter.Domain\\PetSitter.Domain.csproj"
+            "F:\\Programming\\GitHub\\PetSitterBackend\\PetSitter.Domain\\PetSitter.Domain.csproj": {
+              "projectPath": "F:\\Programming\\GitHub\\PetSitterBackend\\PetSitter.Domain\\PetSitter.Domain.csproj"
             }
           }
         }
@@ -275,11 +275,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -311,7 +306,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "c:\\program files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

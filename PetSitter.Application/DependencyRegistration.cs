@@ -1,6 +1,7 @@
 ﻿using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 using PetSitter.Application.Features.Animals.CreateAnimal;
+using PetSitter.Application.Features.Animals.UploadPhoto;
 using PetSitter.Application.Features.Sitters.CreateSitter;
 using PetSitter.Application.Features.Users.CreateUser;
 
@@ -21,6 +22,7 @@ public static class DependencyRegistration
         services.AddScoped<CreateUserService>();
         services.AddScoped<CreateAnimalHandler>();
         services.AddScoped<CreateSitterHandler>();
+        services.AddScoped<UploadAnimalPhotoHandler>();
 
         return services;
     }
