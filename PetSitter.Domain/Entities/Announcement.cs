@@ -1,9 +1,10 @@
 ﻿using CSharpFunctionalExtensions;
 using PetSitter.Domain.Common;
+using Entity = PetSitter.Domain.Common.Entity;
 
 namespace PetSitter.Domain.Entities;
 
-public class Announcement
+public class Announcement : Entity
 {
     private Announcement()
     {
@@ -25,7 +26,6 @@ public class Announcement
         Price = price;
     }
 
-    public Guid Id { get; }
     public Guid AnimalId { get; private set; }
 
     public string Receipt { get; private set; }

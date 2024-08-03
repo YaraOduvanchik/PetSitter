@@ -1,9 +1,10 @@
 ﻿using CSharpFunctionalExtensions;
 using PetSitter.Domain.Common;
+using Entity = PetSitter.Domain.Common.Entity;
 
 namespace PetSitter.Domain.Entities;
 
-public class Photo
+public class Photo : Entity
 {
     private Photo()
     {
@@ -15,10 +16,7 @@ public class Photo
         IsMain = isMain;
     }
 
-    public Guid Id { get; }
-
     public string Path { get; private set; }
-
     public bool IsMain { get; private set; }
 
     public static Result<Photo, Error> CreateAndActivate(string path)

@@ -1,10 +1,11 @@
 ﻿using CSharpFunctionalExtensions;
 using PetSitter.Domain.Common;
 using PetSitter.Domain.ValueObjects;
+using Entity = PetSitter.Domain.Common.Entity;
 
 namespace PetSitter.Domain.Entities;
 
-public class Sitter
+public class Sitter: Entity
 {
     private Sitter()
     {
@@ -29,9 +30,7 @@ public class Sitter
         AnimalCount = animalCount;
         Preferences = preferences;
     }
-
-    public Guid Id { get; }
-
+    
     public string Name { get; private set; }
     public string Surname { get; private set; }
     public string Patronymic { get; private set; }

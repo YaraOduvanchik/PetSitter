@@ -1,9 +1,10 @@
 ﻿using CSharpFunctionalExtensions;
 using PetSitter.Domain.Common;
+using Entity = PetSitter.Domain.Common.Entity;
 
 namespace PetSitter.Domain.Entities;
 
-public class Animal
+public class Animal : Entity
 {
     public const int MAX_NAME_LENGTH = 100;
 
@@ -42,8 +43,6 @@ public class Animal
         _vaccinations = vaccinations.ToList();
     }
 
-    public Guid Id { get; }
-
     public Guid UserId { get; private set; }
 
     public string Name { get; private set; }
@@ -72,10 +71,10 @@ public class Animal
     
     public Result<bool, Error> AddPhoto(Photo photo)
     {
-        if (_photos.Count > PHOTO_COUNT_LIMIT)
-            return Errors.Animals.PhotoCountLimit();
-
         _photos.Add(photo);
+        
+        if (_photos.Count >= PHOTO_COUNT_LIMIT)
+            return Errors.Animals.PhotoCountLimit();
 
         return true;
     }

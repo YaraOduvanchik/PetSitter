@@ -52,20 +52,20 @@ public class AnimalController : ApplicationController
         return Ok(result.Value);
     }
     
-    [HttpGet("photo")]
-    public async Task<IActionResult> GetPhoto(
-        string photo,
-        [FromServices] IMinioClient client)
-    {
-        var presignedGetObjectAsync = new PresignedGetObjectArgs()
-            .WithBucket("images")
-            .WithObject(photo)
-            .WithExpiry(604800);
-
-        var url = await client.PresignedGetObjectAsync(presignedGetObjectAsync);
-
-        return Ok(url);
-    }
+    // [HttpGet("photo")]
+    // public async Task<IActionResult> GetPhoto(
+    //     string photo,
+    //     [FromServices] IMinioClient client)
+    // {
+    //     var presignedGetObjectAsync = new PresignedGetObjectArgs()
+    //         .WithBucket("images")
+    //         .WithObject(photo)
+    //         .WithExpiry(604800);
+    //
+    //     var url = await client.PresignedGetObjectAsync(presignedGetObjectAsync);
+    //
+    //     return Ok(url);
+    // }
 
     // [HttpPost("disease")]
     // public async Task<IActionResult> Create(

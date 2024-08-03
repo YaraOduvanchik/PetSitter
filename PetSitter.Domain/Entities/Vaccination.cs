@@ -1,9 +1,10 @@
 ﻿using CSharpFunctionalExtensions;
 using PetSitter.Domain.Common;
+using Entity = PetSitter.Domain.Common.Entity;
 
 namespace PetSitter.Domain.Entities;
 
-public record Vaccination
+public class Vaccination: Entity
 {
     private Vaccination()
     {
@@ -15,13 +16,9 @@ public record Vaccination
         DurationDay = durationDay;
         IsTimeLimit = isTimeLimit;
     }
-
-    public Guid Id { get; }
-
+    
     public string Name { get; private set; }
-
     public int DurationDay { get; private set; }
-
     public bool IsTimeLimit { get; private set; }
 
     public static Result<Vaccination, Error> Create(string name, int durationDay, bool isTimeLimit)

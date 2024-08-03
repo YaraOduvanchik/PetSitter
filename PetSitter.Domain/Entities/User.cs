@@ -1,10 +1,11 @@
 ﻿using CSharpFunctionalExtensions;
 using PetSitter.Domain.Common;
 using PetSitter.Domain.ValueObjects;
+using Entity = PetSitter.Domain.Common.Entity;
 
 namespace PetSitter.Domain.Entities;
 
-public class User
+public class User: Entity
 {
     private User()
     {
@@ -25,9 +26,7 @@ public class User
         DateOfBirth = dateOfBirth;
         Address = address;
     }
-
-    public Guid Id { get; }
-
+    
     public string Name { get; private set; }
     public string Surname { get; private set; }
     public string Patronymic { get; private set; }

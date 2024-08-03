@@ -23,13 +23,13 @@ public class UploadAnimalPhotoHandler
             return animal.Error;
 
         var photoId = Guid.NewGuid();
-        
+
         var path = photoId + Path.GetExtension(request.File.FileName);
-        
+
         var photo = Photo.CreateAndActivate(path);
         if (photo.IsFailure)
             return photo.Error;
-        
+
         var isSuccessUpload = animal.Value.AddPhoto(photo.Value);
         if (isSuccessUpload.IsFailure)
             return isSuccessUpload.Error;
@@ -37,14 +37,10 @@ public class UploadAnimalPhotoHandler
         var objectName = await _minioProvider.UploadPhoto(request.File, path);
         if (objectName.IsFailure)
             return objectName.Error;
-
+        
         var result = await _animalRepository.Save(ct);
         if (result.IsFailure)
-        {
-            await _minioProvider.RemovePhoto(path);
-            
             return result.Error;
-        }
 
         return path;
     }

@@ -40,3 +40,15 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+public class Cleaner : BackgroundService
+{
+    protected override async Task ExecuteAsync(CancellationToken stoppingToken)
+    {
+        while (!stoppingToken.IsCancellationRequested)
+        {
+            Console.WriteLine("Tick");
+            await Task.Delay(3000, stoppingToken);
+        }
+    }
+}

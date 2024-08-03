@@ -1,9 +1,10 @@
 ﻿using CSharpFunctionalExtensions;
 using PetSitter.Domain.Common;
+using Entity = PetSitter.Domain.Common.Entity;
 
 namespace PetSitter.Domain.Entities;
 
-public record Disease
+public class Disease : Entity 
 {
     private Disease()
     {
@@ -14,9 +15,7 @@ public record Disease
         Name = name;
         Symptom = symptom;
     }
-
-    public Guid Id { get; }
-
+    
     public string Name { get; private set; }
     public string Symptom { get; private set; }
 
@@ -30,8 +29,7 @@ public record Disease
 
         if (string.IsNullOrWhiteSpace(symptom))
             return Errors.General.ValueIsInvalid(symptom);
-
-
+        
         return new Disease(name, symptom);
     }
 }
