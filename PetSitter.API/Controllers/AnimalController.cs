@@ -1,10 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Minio;
-using Minio.DataModel.Args;
 using PetSitter.Application.Features.Animals.CreateAnimal;
 using PetSitter.Application.Features.Animals.GetAnimals;
 using PetSitter.Application.Features.Animals.UploadPhoto;
-using PetSitter.Application.Features.Diseases.CreateDisease;
 using PetSitter.Infrastructure.Queries.Animals;
 
 namespace PetSitter.API.Controllers;
@@ -22,7 +19,6 @@ public class AnimalController : ApplicationController
 
         if (idResult.IsFailure)
             return BadRequest(idResult.Error);
-
 
         return Ok(idResult.Value);
     }

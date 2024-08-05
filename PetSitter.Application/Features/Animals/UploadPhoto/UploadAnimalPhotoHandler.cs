@@ -22,9 +22,9 @@ public class UploadAnimalPhotoHandler
         if (animal.IsFailure)
             return animal.Error;
 
-        var photoId = Guid.NewGuid();
+        var newGuid = Guid.NewGuid();
 
-        var path = photoId + Path.GetExtension(request.File.FileName);
+        var path = newGuid.ToString() + Path.GetExtension(request.File.FileName);
 
         var photo = Photo.CreateAndActivate(path);
         if (photo.IsFailure)

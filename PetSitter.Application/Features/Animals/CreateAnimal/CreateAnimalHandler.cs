@@ -15,10 +15,10 @@ public class CreateAnimalHandler
 
     public async Task<Result<Guid, Error>> Handle(CreateAnimalRequest request, CancellationToken ct)
     {
-        var photos = request.Photos.Select(p => Photo.CreateAndActivate(p.Path).Value);
-        var diseases = request.Diseases.Select(d => Disease.Create(d.Name, d.Symptom).Value);
-        var vaccinations =
-            request.Vaccinations.Select(v => Vaccination.Create(v.Name, v.DurationDay, v.IsTimeLimit).Value);
+        // var photos = request.Photos.Select(p => Photo.CreateAndActivate(p.Path).Value);
+        // var diseases = request.Diseases.Select(d => Disease.Create(d.Name, d.Symptom).Value);
+        // var vaccinations =
+        //     request.Vaccinations.Select(v => Vaccination.Create(v.Name, v.DurationDay, v.IsTimeLimit).Value);
 
         var animal = Animal.Create(
             request.UserId,
@@ -28,10 +28,7 @@ public class CreateAnimalHandler
             request.Gender,
             request.Breed,
             request.Birthday,
-            request.Weight,
-            [],
-            [],
-            []
+            request.Weight
         ).Value;
 
         var idResult = await _animalsRepository.Add(animal, ct);

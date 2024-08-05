@@ -24,10 +24,7 @@ public class Animal : Entity
         string gender,
         DateTimeOffset birthday,
         string breed,
-        float weight,
-        IEnumerable<Photo> photos,
-        IEnumerable<Disease> diseases,
-        IEnumerable<Vaccination> vaccinations)
+        float weight)
 
     {
         UserId = userId;
@@ -38,9 +35,6 @@ public class Animal : Entity
         Birthday = birthday;
         Breed = breed;
         Weight = weight;
-        _photos = photos.ToList();
-        _diseases = diseases.ToList();
-        _vaccinations = vaccinations.ToList();
     }
 
     public Guid UserId { get; private set; }
@@ -75,7 +69,7 @@ public class Animal : Entity
         
         if (_photos.Count >= PHOTO_COUNT_LIMIT)
             return Errors.Animals.PhotoCountLimit();
-
+        
         return true;
     }
     
@@ -97,10 +91,7 @@ public class Animal : Entity
         string gender,
         string breed,
         DateTimeOffset birthday,
-        float weight,
-        IEnumerable<Photo> photos,
-        IEnumerable<Disease> diseases,
-        IEnumerable<Vaccination> vaccinations)
+        float weight)
     {
         var nameValue = name.Trim();
         var descriptionValue = description.Trim();
@@ -139,9 +130,6 @@ public class Animal : Entity
             gender,
             birthday,
             breedValue,
-            weight,
-            photos,
-            diseases,
-            vaccinations);
+            weight);
     }
 }

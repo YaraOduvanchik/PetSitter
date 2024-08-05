@@ -15,10 +15,7 @@ public record CreateAnimalRequest(
     string Gender,
     string Breed,
     DateTimeOffset Birthday,
-    float Weight,
-    List<CreatePhotoRequest> Photos,
-    List<CreateDiseaseRequest> Diseases,
-    List<CreateVaccinationRequest> Vaccinations);
+    float Weight);
 
 public class CreateAnimalRequestValidator : AbstractValidator<CreateAnimalRequest>
 {

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace PetSitter.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class Initial : Migration
+    public partial class InitialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -113,17 +113,17 @@ namespace PetSitter.Infrastructure.Migrations
                 {
                     id = table.Column<Guid>(type: "uuid", nullable: false),
                     name = table.Column<string>(type: "text", nullable: false),
-                    symptom = table.Column<string>(type: "text", nullable: false)
+                    symptom = table.Column<string>(type: "text", nullable: false),
+                    animal_id = table.Column<Guid>(type: "uuid", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("pk_diseases", x => x.id);
                     table.ForeignKey(
-                        name: "fk_diseases_animals_id",
-                        column: x => x.id,
+                        name: "fk_diseases_animals_animal_id",
+                        column: x => x.animal_id,
                         principalTable: "animals",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "id");
                 });
 
             migrationBuilder.CreateTable(
@@ -132,17 +132,17 @@ namespace PetSitter.Infrastructure.Migrations
                 {
                     id = table.Column<Guid>(type: "uuid", nullable: false),
                     path = table.Column<string>(type: "text", nullable: false),
-                    is_main = table.Column<bool>(type: "boolean", nullable: false)
+                    is_main = table.Column<bool>(type: "boolean", nullable: false),
+                    animal_id = table.Column<Guid>(type: "uuid", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("pk_photos", x => x.id);
                     table.ForeignKey(
-                        name: "fk_photos_animals_id",
-                        column: x => x.id,
+                        name: "fk_photos_animals_animal_id",
+                        column: x => x.animal_id,
                         principalTable: "animals",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "id");
                 });
 
             migrationBuilder.CreateTable(
@@ -152,17 +152,17 @@ namespace PetSitter.Infrastructure.Migrations
                     id = table.Column<Guid>(type: "uuid", nullable: false),
                     name = table.Column<string>(type: "text", nullable: false),
                     duration_day = table.Column<int>(type: "integer", nullable: false),
-                    is_time_limit = table.Column<bool>(type: "boolean", nullable: false)
+                    is_time_limit = table.Column<bool>(type: "boolean", nullable: false),
+                    animal_id = table.Column<Guid>(type: "uuid", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("pk_vaccinations", x => x.id);
                     table.ForeignKey(
-                        name: "fk_vaccinations_animals_id",
-                        column: x => x.id,
+                        name: "fk_vaccinations_animals_animal_id",
+                        column: x => x.animal_id,
                         principalTable: "animals",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "id");
                 });
 
             migrationBuilder.CreateIndex(
@@ -178,6 +178,21 @@ namespace PetSitter.Infrastructure.Migrations
             migrationBuilder.CreateIndex(
                 name: "ix_announcements_animal_id",
                 table: "announcements",
+                column: "animal_id");
+
+            migrationBuilder.CreateIndex(
+                name: "ix_diseases_animal_id",
+                table: "diseases",
+                column: "animal_id");
+
+            migrationBuilder.CreateIndex(
+                name: "ix_photos_animal_id",
+                table: "photos",
+                column: "animal_id");
+
+            migrationBuilder.CreateIndex(
+                name: "ix_vaccinations_animal_id",
+                table: "vaccinations",
                 column: "animal_id");
         }
 

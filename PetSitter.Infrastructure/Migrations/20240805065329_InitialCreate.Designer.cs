@@ -13,8 +13,8 @@ using PetSitter.Infrastructure.DbContexts;
 namespace PetSitter.Infrastructure.Migrations
 {
     [DbContext(typeof(PetSitterWriteDbContext))]
-    [Migration("20240729111559_Initial")]
-    partial class Initial
+    [Migration("20240805065329_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -131,8 +131,13 @@ namespace PetSitter.Infrastructure.Migrations
             modelBuilder.Entity("PetSitter.Domain.Entities.Disease", b =>
                 {
                     b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("uuid")
                         .HasColumnName("id");
+
+                    b.Property<Guid?>("AnimalId")
+                        .HasColumnType("uuid")
+                        .HasColumnName("animal_id");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -147,14 +152,22 @@ namespace PetSitter.Infrastructure.Migrations
                     b.HasKey("Id")
                         .HasName("pk_diseases");
 
+                    b.HasIndex("AnimalId")
+                        .HasDatabaseName("ix_diseases_animal_id");
+
                     b.ToTable("diseases", (string)null);
                 });
 
             modelBuilder.Entity("PetSitter.Domain.Entities.Photo", b =>
                 {
                     b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("uuid")
                         .HasColumnName("id");
+
+                    b.Property<Guid?>("AnimalId")
+                        .HasColumnType("uuid")
+                        .HasColumnName("animal_id");
 
                     b.Property<bool>("IsMain")
                         .HasColumnType("boolean")
@@ -167,6 +180,9 @@ namespace PetSitter.Infrastructure.Migrations
 
                     b.HasKey("Id")
                         .HasName("pk_photos");
+
+                    b.HasIndex("AnimalId")
+                        .HasDatabaseName("ix_photos_animal_id");
 
                     b.ToTable("photos", (string)null);
                 });
@@ -317,8 +333,13 @@ namespace PetSitter.Infrastructure.Migrations
             modelBuilder.Entity("PetSitter.Domain.Entities.Vaccination", b =>
                 {
                     b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("uuid")
                         .HasColumnName("id");
+
+                    b.Property<Guid?>("AnimalId")
+                        .HasColumnType("uuid")
+                        .HasColumnName("animal_id");
 
                     b.Property<int>("DurationDay")
                         .HasColumnType("integer")
@@ -335,6 +356,9 @@ namespace PetSitter.Infrastructure.Migrations
 
                     b.HasKey("Id")
                         .HasName("pk_vaccinations");
+
+                    b.HasIndex("AnimalId")
+                        .HasDatabaseName("ix_vaccinations_animal_id");
 
                     b.ToTable("vaccinations", (string)null);
                 });
@@ -368,30 +392,24 @@ namespace PetSitter.Infrastructure.Migrations
                 {
                     b.HasOne("PetSitter.Domain.Entities.Animal", null)
                         .WithMany("Diseases")
-                        .HasForeignKey("Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("fk_diseases_animals_id");
+                        .HasForeignKey("AnimalId")
+                        .HasConstraintName("fk_diseases_animals_animal_id");
                 });
 
             modelBuilder.Entity("PetSitter.Domain.Entities.Photo", b =>
                 {
                     b.HasOne("PetSitter.Domain.Entities.Animal", null)
                         .WithMany("Photos")
-                        .HasForeignKey("Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("fk_photos_animals_id");
+                        .HasForeignKey("AnimalId")
+                        .HasConstraintName("fk_photos_animals_animal_id");
                 });
 
             modelBuilder.Entity("PetSitter.Domain.Entities.Vaccination", b =>
                 {
                     b.HasOne("PetSitter.Domain.Entities.Animal", null)
                         .WithMany("Vaccinations")
-                        .HasForeignKey("Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("fk_vaccinations_animals_id");
+                        .HasForeignKey("AnimalId")
+                        .HasConstraintName("fk_vaccinations_animals_animal_id");
                 });
 
             modelBuilder.Entity("PetSitter.Domain.Entities.Animal", b =>

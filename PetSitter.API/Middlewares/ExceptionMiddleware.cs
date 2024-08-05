@@ -24,16 +24,16 @@ public class ExceptionMiddleware
         catch (Exception ex)
         {
             _logger.LogError(ex.Message);
-
+        
             var errorInfo = new ErrorInfo(Errors.General.Internal(ex.Message));
-
+        
             var envelope = Envelope.Error([errorInfo]);
-
+        
             var error = new Error("server.internal", ex.Message);
-
+        
             context.Response.ContentType = "application/json";
             context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
-
+        
             await context.Response.WriteAsJsonAsync(envelope);
         }
     }
