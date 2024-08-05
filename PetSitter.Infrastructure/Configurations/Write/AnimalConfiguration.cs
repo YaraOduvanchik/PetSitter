@@ -38,12 +38,15 @@ public class AnimalConfiguration : IEntityTypeConfiguration<Animal>
             .IsRequired();
 
         builder.HasMany(a => a.Photos)
-            .WithOne();
+            .WithOne()
+            .IsRequired();
 
         builder.HasMany(a => a.Vaccinations)
-            .WithOne();
+            .WithOne()
+            .IsRequired();
 
         builder.HasMany(a => a.Diseases)
-            .WithOne();
+            .WithOne()
+            .IsRequired();
     }
 }

@@ -132,7 +132,7 @@ namespace PetSitter.Infrastructure.Migrations
                         .HasColumnType("uuid")
                         .HasColumnName("id");
 
-                    b.Property<Guid?>("AnimalId")
+                    b.Property<Guid>("AnimalId")
                         .HasColumnType("uuid")
                         .HasColumnName("animal_id");
 
@@ -162,7 +162,7 @@ namespace PetSitter.Infrastructure.Migrations
                         .HasColumnType("uuid")
                         .HasColumnName("id");
 
-                    b.Property<Guid?>("AnimalId")
+                    b.Property<Guid>("AnimalId")
                         .HasColumnType("uuid")
                         .HasColumnName("animal_id");
 
@@ -334,7 +334,7 @@ namespace PetSitter.Infrastructure.Migrations
                         .HasColumnType("uuid")
                         .HasColumnName("id");
 
-                    b.Property<Guid?>("AnimalId")
+                    b.Property<Guid>("AnimalId")
                         .HasColumnType("uuid")
                         .HasColumnName("animal_id");
 
@@ -390,6 +390,8 @@ namespace PetSitter.Infrastructure.Migrations
                     b.HasOne("PetSitter.Domain.Entities.Animal", null)
                         .WithMany("Diseases")
                         .HasForeignKey("AnimalId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
                         .HasConstraintName("fk_diseases_animals_animal_id");
                 });
 
@@ -398,6 +400,8 @@ namespace PetSitter.Infrastructure.Migrations
                     b.HasOne("PetSitter.Domain.Entities.Animal", null)
                         .WithMany("Photos")
                         .HasForeignKey("AnimalId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
                         .HasConstraintName("fk_photos_animals_animal_id");
                 });
 
@@ -406,6 +410,8 @@ namespace PetSitter.Infrastructure.Migrations
                     b.HasOne("PetSitter.Domain.Entities.Animal", null)
                         .WithMany("Vaccinations")
                         .HasForeignKey("AnimalId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
                         .HasConstraintName("fk_vaccinations_animals_animal_id");
                 });
 

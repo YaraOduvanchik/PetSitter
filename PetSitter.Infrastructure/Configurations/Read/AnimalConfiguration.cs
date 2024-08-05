@@ -17,14 +17,14 @@ public class AnimalConfiguration : IEntityTypeConfiguration<AnimalDto>
 
         builder.HasMany(a => a.Photos)
             .WithOne()
-            .HasForeignKey(ph => ph.AnimalId);
+            .IsRequired();
 
         builder.HasMany(a => a.Vaccinations)
             .WithOne()
-            .HasForeignKey(v => v.AnimalId);
+            .IsRequired();
 
         builder.HasMany(a => a.Diseases)
             .WithOne()
-            .HasForeignKey(d => d.AnimalId);
+            .IsRequired();
     }
 }

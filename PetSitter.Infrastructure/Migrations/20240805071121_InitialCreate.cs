@@ -114,7 +114,7 @@ namespace PetSitter.Infrastructure.Migrations
                     id = table.Column<Guid>(type: "uuid", nullable: false),
                     name = table.Column<string>(type: "text", nullable: false),
                     symptom = table.Column<string>(type: "text", nullable: false),
-                    animal_id = table.Column<Guid>(type: "uuid", nullable: true)
+                    animal_id = table.Column<Guid>(type: "uuid", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -123,7 +123,8 @@ namespace PetSitter.Infrastructure.Migrations
                         name: "fk_diseases_animals_animal_id",
                         column: x => x.animal_id,
                         principalTable: "animals",
-                        principalColumn: "id");
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -133,7 +134,7 @@ namespace PetSitter.Infrastructure.Migrations
                     id = table.Column<Guid>(type: "uuid", nullable: false),
                     path = table.Column<string>(type: "text", nullable: false),
                     is_main = table.Column<bool>(type: "boolean", nullable: false),
-                    animal_id = table.Column<Guid>(type: "uuid", nullable: true)
+                    animal_id = table.Column<Guid>(type: "uuid", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -142,7 +143,8 @@ namespace PetSitter.Infrastructure.Migrations
                         name: "fk_photos_animals_animal_id",
                         column: x => x.animal_id,
                         principalTable: "animals",
-                        principalColumn: "id");
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -153,7 +155,7 @@ namespace PetSitter.Infrastructure.Migrations
                     name = table.Column<string>(type: "text", nullable: false),
                     duration_day = table.Column<int>(type: "integer", nullable: false),
                     is_time_limit = table.Column<bool>(type: "boolean", nullable: false),
-                    animal_id = table.Column<Guid>(type: "uuid", nullable: true)
+                    animal_id = table.Column<Guid>(type: "uuid", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -162,7 +164,8 @@ namespace PetSitter.Infrastructure.Migrations
                         name: "fk_vaccinations_animals_animal_id",
                         column: x => x.animal_id,
                         principalTable: "animals",
-                        principalColumn: "id");
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
